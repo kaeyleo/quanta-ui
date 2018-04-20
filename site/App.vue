@@ -10,6 +10,8 @@ export default {
 </script>
 
 <style lang="stylus">
+  html, body
+    margin 0
   body
     font-family 'Avenir', Helvetica, Arial, sans-serif
     -webkit-font-smoothing antialiased
