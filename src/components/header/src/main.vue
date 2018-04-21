@@ -1,21 +1,38 @@
 <template lang="pug">
-  header.q-header__wrapper
+  header.q-header__wrapper(
+    :style="{ backgroundColor: backgroundColor || '' }"
+  )
     .q-header
-      .q-header__title
-        h1.q-header__title-text 项目管理系统
-        //- img.q-header__title-logo(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9PpdMWriUtBV7W7nvWoEQ_GQwYKb9LAOeVuNGcOkaYK0EZnXyYg")
-      .q-header__menu
+      .q-header__title.left
+        h1.q-header__title-text(v-if="typeof title === 'string'") {{ title }}
+        h1.q-header__title-text(v-if="title.type === 'text'") {{ title.value }}
+        img.q-header__title-logo(v-if="title.type === 'logo'" :src="title.value")
+      .q-header__menu.left
         ul.q-menu.clearfix
           li.q-menu-item 首页
           li.q-menu-item.is-active 设计
           li.q-menu-item 开发
           li.q-menu-item.is-disabled 探索
           li.q-menu-item 活动
+      .q-header__actions.right
+        ul.q-menu.clearfix
+          li.q-menu-item 登录
+          li.q-menu-item 注册
+
 </template>
 
 <script>
 export default {
   name: 'q-header',
+  props: {
+    title: {
+      type: [String, Object],
+      default: ''
+    },
+    backgroundColor: String,
+    textColor: String
+  },
+
   data () {
     return {}
   }
@@ -32,6 +49,10 @@ export default {
     li
       list-style-type none
 
+  .left
+    float left
+  .right
+    float right
   .clearfix::after
     content ''
     display table
@@ -41,22 +62,15 @@ export default {
   .q-header__wrapper
     width 100%
     background-color #fff
-    border-bottom 1px solid #e8e8e8
   .q-header
     padding 0 16px
     margin 0 auto
-    display flex
-    align-items center
-    max-width 1152px
-    height 66px
-    box-sizing border-box
+    // max-width 1152px
+    height 60px
+    .q-menu
+      line-height 60px
 
-  // common
-  .q-header__title,
-  .q-header__menu
-    float left
-
-  // title
+  // header title
   .q-header__title
     font-size 0
     text-align left
@@ -65,19 +79,30 @@ export default {
       font-size 22px
       font-weight 400
       color #333
+      line-height 60px
     .q-header__title-logo
+      margin 14px 0
       height 32px
       pointer-events none
 
-  // menu
+  // header menu
   $color-default = #333
   .q-header__menu
     margin-left 32px
+
+  // header actions
+  .q-header__actions
+    .q-menu
+      padding 0 12px
+    .q-menu-item
+      padding 0 12px
+
+  // menu
   .q-menu
-    display block
     padding 0 16px
   .q-menu-item
-    padding 6px 16px
+    box-sizing border-box
+    padding 0 16px
     float left
     font-size 16px
     color lighten($color-default, 30)

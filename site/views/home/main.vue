@@ -1,6 +1,9 @@
 <template lang="pug">
   .container
-    q-header.header
+    q-header.header(
+      :title="header.title"
+      :backgroundColor="header.backgroundColor"
+    )
     img(src="@/assets/logo.png")
     p {{ desc }}
 </template>
@@ -10,7 +13,20 @@ export default {
   name: 'Home',
   data () {
     return {
-      desc: 'A Desktop UI Library For Vue.js'
+      desc: 'A Desktop UI Library For Vue.js',
+      header: {
+        title: {
+          type: 'text',
+          value: 'QuantaUI'
+        },
+        backgroundColor: '#fff'
+      }
+      // header: {
+      //   title: {
+      //     type: 'logo',
+      //     value: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9PpdMWriUtBV7W7nvWoEQ_GQwYKb9LAOeVuNGcOkaYK0EZnXyYg'
+      //   }
+      // }
     }
   }
 }
@@ -24,6 +40,7 @@ export default {
     position fixed
     top 0
     left 0
+    border-bottom 1px solid #e8e8e8
   img
     width 20vw
   p
