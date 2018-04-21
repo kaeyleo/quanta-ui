@@ -1,6 +1,7 @@
 import Header from './components/header'
+import Menu from './components/menu'
 
-const components = [Header]
+const components = [Header, Menu]
 
 const install = function (Vue, options = {}) {
   components.map(component => {
@@ -10,7 +11,8 @@ const install = function (Vue, options = {}) {
 
 export {
   install,
-  Header
+  Header,
+  Menu
 }
 
 export default {
