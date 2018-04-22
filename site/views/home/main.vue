@@ -12,7 +12,7 @@
       section.component
         h3 Menu
         .component-example
-          q-menu(:activeIndex="menu.activeIndex")
+          q-menu(:active-index="menu.activeIndex")
             q-menu-item(index="1" title="首页")
             q-menu-item(index="2" title="设计")
             q-menu-item(index="3" title="开发" disabled)
