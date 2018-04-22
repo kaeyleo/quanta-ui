@@ -7,11 +7,17 @@
     .hero
       img(src="@/assets/logo.png")
       p {{ desc }}
+      router-link(to="/guide") Guide
     .component-content
       section.component
         h3 Menu
         .component-example
-          q-menu
+          q-menu(:activeIndex="menu.activeIndex")
+            q-menu-item(index="1" title="首页")
+            q-menu-item(index="2" title="设计")
+            q-menu-item(index="3" title="开发" disabled)
+            q-menu-item(index="4" title="探索")
+            q-menu-item(index="5" title="活动")
 </template>
 
 <script>
@@ -33,7 +39,9 @@ export default {
       //     value: 'http://p7jp7q3ay.bkt.clouddn.com/logo.png?v=1.0.0'
       //   }
       // }
-      menu: {}
+      menu: {
+        activeIndex: 1
+      }
     }
   }
 }
