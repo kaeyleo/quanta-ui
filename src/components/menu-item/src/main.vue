@@ -1,9 +1,11 @@
 <template lang="pug">
-  li.q-menu-item(
-    :style="itemStyle"
-    :class="{ 'disabled': disabled, 'active': active }"
-    @click="handleClick"
-  ) {{ title }}
+  li.q-menu-item-wrapper
+    div.q-menu-item(
+      :style="itemStyle"
+      :class="{ 'disabled': disabled, 'active': active }"
+      @click="handleClick"
+    )
+      span.q-menu-item__title {{ title }}
 </template>
 
 <script>
@@ -26,8 +28,15 @@ export default {
   },
 
   computed: {
+    parentMenu () {
+      let parent = this.$parent
+      while (parent && ['q-menu'].indexOf(parent.$options.name) === -1) {
+        parent = parent.$parent
+      }
+      return parent
+    },
     activeIndex () {
-      return this.$parent.myActiveIndex.toString()
+      return this.parentMenu.myActiveIndex.toString()
     },
     currentIndex () {
       return this.index.toString()
@@ -36,7 +45,7 @@ export default {
       return this.activeIndex === this.currentIndex
     },
     activeTextColor () {
-      return this.$parent.myActiveTextColor
+      return this.parentMenu.myActiveTextColor
     },
     itemStyle () {
       const style = {
@@ -47,34 +56,50 @@ export default {
   },
 
   mounted () {
-    console.log(this.currentIndex, this.title)
+    console.log(this.currentIndex, this.title, this.parentMenu, this.activeIndex)
   },
 
   methods: {
     handleClick () {
       if (this.disabled) return
-      this.$parent.toggleIndex(this.currentIndex)
+      this.parentMenu.toggleIndex(this.currentIndex)
     }
   }
 }
 </script>
 
 <style lang="stylus">
-  $color-default = #333
+  $color-default = #222
+  $color-primary = #0593FD
 
-  .q-menu-item
-    box-sizing border-box
-    padding 0 16px
+  .q-menu-item-wrapper
     float left
-    font-size 16px
-    color lighten($color-default, 30)
+  .q-menu-item
+    position relative
     cursor pointer
-    transition .2s
-    &:hover, &.active
-      color lighten($color-default, 0)
-    &.active
-      font-weight 500
-  .q-menu-item.disabled
-    color lighten($color-default, 56)
-    cursor not-allowed
+    padding 0 16px
+    color $color-default
+    transition background .3s, color .2s
+    &:after
+      content ''
+      position absolute
+      display block
+      bottom -1px
+      left 50%
+      width 0
+      height 2px
+      background-color $color-primary
+      transition .2s
+    &.active, &:hover
+      color $color-primary
+      background #F5F7F8
+      &:after
+        left 0
+        width 100%
+    &.disabled
+      color lighten($color-default, 50)
+      cursor not-allowed
+      background transparent
+      &:after
+        display none
 </style>

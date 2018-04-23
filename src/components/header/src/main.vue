@@ -8,17 +8,15 @@
         h1.q-header__title-text(v-if="title.type === 'text'") {{ title.value }}
         img.q-header__title-logo(v-if="title.type === 'logo'" :src="title.value")
       .q-header__menu.left
-        ul.q-menu.clearfix
-          li.q-menu-item 首页
-          li.q-menu-item.is-active 设计
-          li.q-menu-item 开发
-          li.q-menu-item.is-disabled 探索
-          li.q-menu-item 活动
-      .q-header__actions.right
-        ul.q-menu.clearfix
-          li.q-menu-item 登录
-          li.q-menu-item 注册
-
+        q-menu
+          q-menu-item(index="1" title="首页")
+          q-menu-item(index="2" title="设计")
+          q-menu-item(index="3" title="开发" disabled)
+          q-menu-item(index="4" title="探索")
+      .q-header__menu.right
+        q-menu
+          q-menu-item(index="1" title="登录")
+          q-menu-item(index="2" title="注册")
 </template>
 
 <script>
@@ -67,8 +65,6 @@ export default {
     margin 0 auto
     // max-width 1152px
     height 60px
-    .q-menu
-      line-height 60px
 
   // header title
   .q-header__title
@@ -88,29 +84,15 @@ export default {
   // header menu
   $color-default = #333
   .q-header__menu
-    margin-left 32px
-
-  // header actions
-  .q-header__actions
-    .q-menu
+    line-height 60px
+    &.left
+      margin-left 32px
+    &.right
       padding 0 12px
-    .q-menu-item
-      padding 0 12px
+      .q-menu
+        padding 0 12px
+      .q-menu-item
+        padding 0 12px
 
   // menu
-  .q-menu
-    padding 0 16px
-  .q-menu-item
-    box-sizing border-box
-    padding 0 16px
-    float left
-    font-size 16px
-    color lighten($color-default, 30)
-    cursor pointer
-    transition .2s
-    &:hover, &.is-active
-      color lighten($color-default, 0)
-    &.is-disabled
-      color lighten($color-default, 56)
-      cursor not-allowed
 </style>

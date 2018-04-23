@@ -12,11 +12,14 @@
       section.component
         h3 Menu
         .component-example
-          q-menu(v-bind="menu")
+          q-menu.example-menu(v-bind="menu")
             q-menu-item(index="1" title="首页")
             q-menu-item(index="2" title="设计")
             q-menu-item(index="3" title="开发" disabled)
             q-menu-item(index="4" title="探索")
+              q-menu-item(index="4-1" title="音乐")
+              q-menu-item(index="4-2" title="游戏")
+              q-menu-item(index="4-3" title="体育")
             q-menu-item(index="5" title="活动")
 </template>
 
@@ -78,4 +81,6 @@ export default {
       border-radius 2px
       margin 0 0 16px
       padding 24px
+  .example-menu
+    line-height 46px
 </style>
