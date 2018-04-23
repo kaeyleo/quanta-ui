@@ -12,7 +12,7 @@
       section.component
         h3 Menu
         .component-example
-          q-menu(:active-index="menu.activeIndex")
+          q-menu(v-bind="menu")
             q-menu-item(index="1" title="首页")
             q-menu-item(index="2" title="设计")
             q-menu-item(index="3" title="开发" disabled)
@@ -40,7 +40,8 @@ export default {
       //   }
       // }
       menu: {
-        activeIndex: 1
+        activeIndex: 1,
+        activeTextColor: '#409EFF'
       }
     }
   }

@@ -1,6 +1,8 @@
 <template lang="pug">
   li.q-menu-item(
-    :class="{ 'is-disabled': disabled }"
+    :style="itemStyle"
+    :class="{ 'disabled': disabled, 'active': active }"
+    @click="handleClick"
   ) {{ title }}
 </template>
 
@@ -15,7 +17,7 @@ export default {
     },
     index: {
       type: [String, Number],
-      default: ''
+      required: true
     },
     disabled: {
       type: Boolean,
@@ -23,7 +25,36 @@ export default {
     }
   },
 
+  computed: {
+    activeIndex () {
+      return this.$parent.myActiveIndex.toString()
+    },
+    currentIndex () {
+      return this.index.toString()
+    },
+    active () {
+      return this.activeIndex === this.currentIndex
+    },
+    activeTextColor () {
+      return this.$parent.myActiveTextColor
+    },
+    itemStyle () {
+      const style = {
+        color: this.active ? this.activeTextColor : ''
+      }
+      return style
+    }
+  },
+
   mounted () {
+    console.log(this.currentIndex, this.title)
+  },
+
+  methods: {
+    handleClick () {
+      if (this.disabled) return
+      this.$parent.toggleIndex(this.currentIndex)
+    }
   }
 }
 </script>
@@ -39,11 +70,11 @@ export default {
     color lighten($color-default, 30)
     cursor pointer
     transition .2s
-    &:hover, &.is-active
+    &:hover, &.active
       color lighten($color-default, 0)
-    &.is-active
+    &.active
       font-weight 500
-  .q-menu-item.is-disabled
-    color lighten($color-default, 50)
+  .q-menu-item.disabled
+    color lighten($color-default, 56)
     cursor not-allowed
 </style>

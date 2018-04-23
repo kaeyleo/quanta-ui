@@ -7,15 +7,33 @@
 export default {
   name: 'q-menu',
 
+  data () {
+    return {
+      myActiveIndex: this.activeIndex.toString(),
+      myActiveTextColor: this.activeTextColor
+    }
+  },
+
   props: {
     activeIndex: {
       type: [String, Number],
+      default: ''
+    },
+    activeTextColor: {
+      type: String,
       default: ''
     }
   },
 
   mounted () {
     console.log('activeIndex', this.activeIndex)
+  },
+
+  methods: {
+    toggleIndex (index) {
+      this.myActiveIndex = index
+      console.log('currentItem: ', index)
+    }
   }
 }
 </script>
