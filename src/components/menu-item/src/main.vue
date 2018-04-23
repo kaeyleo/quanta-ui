@@ -6,11 +6,27 @@
       @click="handleClick"
     )
       span.q-menu-item__title {{ title }}
+    transition(name="slide")
+      ul.q-submenu(
+        v-if="$slots && $slots.default"
+        :style="dropStyle"
+        v-show="isOpen"
+      )
+        slot
 </template>
 
 <script>
+import { getStyle } from 'src/script/util'
+
 export default {
   name: 'q-menu-item',
+
+  data () {
+    return {
+      dropWidth: '',
+      isOpen: false
+    }
+  },
 
   props: {
     title: {
@@ -52,34 +68,46 @@ export default {
         color: this.active ? this.activeTextColor : ''
       }
       return style
+    },
+    dropStyle () {
+      return {
+        'min-width': this.dropWidth
+      }
     }
   },
 
   mounted () {
-    console.log(this.currentIndex, this.title, this.parentMenu, this.activeIndex)
+    this.dropWidth = getStyle(this.$el, 'width')
+    // console.log(this.currentIndex, this.title, this.parentMenu, this.activeIndex)
   },
 
   methods: {
     handleClick () {
       if (this.disabled) return
       this.parentMenu.toggleIndex(this.currentIndex)
+      if (this.$slots && this.$slots.default && this.$slots.default.length > 0) {
+        console.log(this.$slots.default)
+        this.isOpen = true
+      }
     }
   }
 }
 </script>
 
 <style lang="stylus">
-  $color-default = #222
+  $color-default = #555
   $color-primary = #0593FD
+
+  .q-menu-item, .q-submenu-item
+    padding 0 16px
+    color $color-default
+    cursor pointer
 
   .q-menu-item-wrapper
     float left
   .q-menu-item
     position relative
-    cursor pointer
-    padding 0 16px
-    color $color-default
-    transition background .3s, color .2s
+    transition background-color .3s, color .2s
     &:after
       content ''
       position absolute
@@ -92,14 +120,36 @@ export default {
       transition .2s
     &.active, &:hover
       color $color-primary
-      background #F5F7F8
       &:after
         left 0
         width 100%
+    &.active
+      background-color #F5F7F8
     &.disabled
-      color lighten($color-default, 50)
+      color lighten($color-default, 36)
       cursor not-allowed
-      background transparent
+      background-color transparent
       &:after
         display none
+
+  .q-submenu
+    padding 6px 0
+    position absolute
+    margin-top 4px
+    z-index 10
+    border-radius 2px
+    background-color #fff
+    overflow hidden
+    box-shadow 0 1px 6px rgba(0,0,0,.2)
+
+  .q-submenu-item
+    transition background-color .3s, color .2s
+    &:hover
+      background-color #F5F7F8
+
+  .slide-enter-active, .slide-leave-active
+    transition .3s
+  .slide-enter, .slide-leave-to
+    opacity 0
+    margin-top -16px
 </style>

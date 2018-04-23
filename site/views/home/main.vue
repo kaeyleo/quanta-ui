@@ -17,9 +17,9 @@
             q-menu-item(index="2" title="设计")
             q-menu-item(index="3" title="开发" disabled)
             q-menu-item(index="4" title="探索")
-              q-menu-item(index="4-1" title="音乐")
-              q-menu-item(index="4-2" title="游戏")
-              q-menu-item(index="4-3" title="体育")
+              q-submenu-item(index="4-1" title="音乐")
+              q-submenu-item(index="4-2" title="游戏")
+              q-submenu-item(index="4-3" title="体育")
             q-menu-item(index="5" title="活动")
 </template>
 
@@ -62,6 +62,7 @@ export default {
     border-bottom 1px solid #e8e8e8
   .hero
     padding 40px 0
+    text-align center
     img
       width 20vw
     p

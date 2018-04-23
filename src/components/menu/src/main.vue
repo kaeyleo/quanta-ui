@@ -25,10 +25,6 @@ export default {
     }
   },
 
-  mounted () {
-    console.log('activeIndex', this.activeIndex)
-  },
-
   methods: {
     toggleIndex (index) {
       this.myActiveIndex = index

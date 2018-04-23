@@ -1,8 +1,9 @@
 import Header from './components/header'
 import Menu from './components/menu'
 import MenuItem from './components/menu-item'
+import SubmenuItem from './components/submenu-item'
 
-const components = [Header, Menu, MenuItem]
+const components = [Header, Menu, MenuItem, SubmenuItem]
 
 const install = function (Vue, options = {}) {
   components.map(component => {
@@ -14,7 +15,8 @@ export {
   install,
   Header,
   Menu,
-  MenuItem
+  MenuItem,
+  SubmenuItem
 }
 
 export default {

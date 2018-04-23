@@ -8,15 +8,15 @@
         h1.q-header__title-text(v-if="title.type === 'text'") {{ title.value }}
         img.q-header__title-logo(v-if="title.type === 'logo'" :src="title.value")
       .q-header__menu.left
-        q-menu
-          q-menu-item(index="1" title="首页")
-          q-menu-item(index="2" title="设计")
-          q-menu-item(index="3" title="开发" disabled)
-          q-menu-item(index="4" title="探索")
+        //- q-menu
+        //-   q-menu-item(index="1" title="首页")
+        //-   q-menu-item(index="2" title="设计")
+        //-   q-menu-item(index="3" title="开发" disabled)
+        //-   q-menu-item(index="4" title="探索")
       .q-header__menu.right
-        q-menu
-          q-menu-item(index="1" title="登录")
-          q-menu-item(index="2" title="注册")
+        //- q-menu
+        //-   q-menu-item(index="1" title="登录")
+        //-   q-menu-item(index="2" title="注册")
 </template>
 
 <script>
