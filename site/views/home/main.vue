@@ -21,6 +21,24 @@
               q-submenu-item(index="4-2" title="游戏")
               q-submenu-item(index="4-3" title="体育")
             q-menu-item(index="5" title="活动")
+      section.component
+        h3 Button
+        .component-example
+          div
+            q-button.button-demo Button
+            q-button.button-demo 按钮
+          div
+            q-button.button-demo(size="small") Small
+            q-button.button-demo Default
+            q-button.button-demo(size="large") Large
+          div
+            q-button.button-demo Plain
+            q-button.button-demo(color="primary") 按钮
+            q-button.button-demo(color="primary") Primary
+            q-button.button-demo(color="success") Success
+            q-button.button-demo(color="warning") Warning
+            q-button.button-demo(color="error") Error
+            q-button.button-demo(color="purple") Custom
 </template>
 
 <script>
@@ -54,6 +72,7 @@ export default {
 <style lang="stylus" scoped>
   .container
     margin-top 60px
+    padding-bottom 160px
   .header
     margin 0 auto
     position fixed
@@ -84,4 +103,12 @@ export default {
       padding 24px
   .example-menu
     line-height 46px
+  .button-demo
+    margin 8px 6px
+
+  // custom button color
+  .q-button--purple, .q-button--purple:hover
+    color #fff
+    border-color #8073DD
+    background-color #8073DD
 </style>
