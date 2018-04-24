@@ -39,6 +39,13 @@
             q-button.button-demo(color="warning") Warning
             q-button.button-demo(color="error") Error
             q-button.button-demo(color="purple") Custom
+          div
+            q-button.button-demo(round) Plain
+            q-button.button-demo(color="info" round) Info
+            q-button.button-demo(color="primary" round) Primary
+            q-button.button-demo(color="success" round) Success
+            q-button.button-demo(color="warning" round) Warning
+            q-button.button-demo(color="error" round) Error
 </template>
 
 <script>

@@ -15,6 +15,9 @@ export default {
   name: 'q-button',
 
   props: {
+    round: {
+      type: Boolean
+    },
     color: {
       type: String,
       default: 'plain'
@@ -34,7 +37,8 @@ export default {
 
       return {
         [`${prefix}--${this.size}`]: !!this.size,
-        [`${prefix}--${this.color}`]: !!this.color
+        [`${prefix}--${this.color}`]: !!this.color,
+        [`${prefix}--round`]: this.round
       }
     }
   }
@@ -84,6 +88,10 @@ export default {
     font-size 15px
   .q-button--small
     padding 8px 10px
+
+  // Style
+  .q-button--round
+    border-radius 20px
 
   // Color
   .q-button--plain
