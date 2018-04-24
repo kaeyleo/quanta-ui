@@ -33,7 +33,7 @@
             q-button.button-demo(size="large") Large
           div
             q-button.button-demo Plain
-            q-button.button-demo(color="primary") 按钮
+            q-button.button-demo(color="info") Info
             q-button.button-demo(color="primary") Primary
             q-button.button-demo(color="success") Success
             q-button.button-demo(color="warning") Warning

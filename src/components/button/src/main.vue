@@ -90,6 +90,10 @@ export default {
     &:hover
       border-color darken($borderColor, 8)
       background-color darken($bgColor, 3)
+  .q-button--info, .q-button--info:hover
+    color #fff
+    background-color #818B92
+    border-color #818B92
   .q-button--primary, .q-button--primary:hover
     color #fff
     background-color #1194F6
