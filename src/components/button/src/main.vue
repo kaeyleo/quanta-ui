@@ -57,14 +57,34 @@ export default {
   html [type=button]
     -webkit-appearance button
 
+  /**
+   * Button Variables
+   */
+
+  $btn-plain-color = #696A6B
+  $btn-plain-border = #D8DADF
+  $btn-plain-bg = #fff
+  $btn-plain-border-hover = darken($btn-plain-border, 8)
+  $btn-plain-bg-hover = darken($btn-plain-bg, 3)
+
+  $btn-info-color = #818B92
+  $btn-primary-color = #1194F6
+  $btn-success-color = #64C061
+  $btn-warning-color = #FFB844
+  $btn-error-color = #EE5660
+
+  /**
+   * Button Style
+   */
+
+  button-status(color)
+    background-color color
+    border-color color
+
   .q-button,
   .q-button:active,
   .q-button:focus
     outline 0
-
-  $color=#696A6B
-  $borderColor=#D8DADF
-  $bgColor=#fff
 
   .q-button
     margin 0
@@ -72,11 +92,11 @@ export default {
     display inline-block
     font-size 14px
     font-weight 500
-    color $color
+    color #fff
     line-height 1
     white-space nowrap
-    border 1px solid $borderColor
-    background-color $bgColor
+    border 1px solid $btn-plain-border
+    background-color $btn-plain-bg
     border-radius 3px
     cursor pointer
     outline 0
@@ -92,8 +112,8 @@ export default {
       &:hover
         opacity .5
       &.q-button--plain
-        border-color $borderColor
-        background-color $bgColor
+        border-color $btn-plain-border
+        background-color $btn-plain-bg
 
   // Size
   .q-button--large
@@ -108,27 +128,18 @@ export default {
 
   // Color
   .q-button--plain
+    color $btn-plain-color
     &:hover
-      border-color darken($borderColor, 8)
-      background-color darken($bgColor, 3)
+      border-color $btn-plain-border-hover
+      background-color $btn-plain-bg-hover
   .q-button--info, .q-button--info:hover
-    color #fff
-    background-color #818B92
-    border-color #818B92
+    button-status($btn-info-color)
   .q-button--primary, .q-button--primary:hover
-    color #fff
-    background-color #1194F6
-    border-color #1194F6
+    button-status($btn-primary-color)
   .q-button--success, .q-button--success:hover
-    color #fff
-    background-color #64C061
-    border-color #64C061
+    button-status($btn-success-color)
   .q-button--warning, .q-button--warning:hover
-    color #fff
-    background-color #FFB844
-    border-color #FFB844
+    button-status($btn-warning-color)
   .q-button--error, .q-button--error:hover
-    color #fff
-    background-color #EE5660
-    border-color #EE5660
+    button-status($btn-error-color)
 </style>
