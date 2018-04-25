@@ -1,6 +1,8 @@
 <template lang="pug">
   button.q-button(
     :class="classes"
+    :disabled="disabled"
+    @click="handleClick"
   )
     span.q-button__text(
       v-if="$slots.default"
@@ -17,6 +19,10 @@ export default {
   props: {
     round: {
       type: Boolean
+    },
+    ripple: {
+      type: Boolean,
+      default: false
     },
     disabled: {
       type: Boolean,
@@ -45,6 +51,37 @@ export default {
         [`${prefix}--round`]: this.round,
         [`disabled`]: this.disabled
       }
+    }
+  },
+
+  methods: {
+    handleClick (e) {
+      this.ripple && this.createRipple(e)
+      this.$emit('click', e)
+    },
+
+    createRipple (e) {
+      const parent = this.$el
+      const circle = document.createElement('div')
+      parent.appendChild(circle)
+
+      const parentWidth = parent.clientWidth
+      const parentHeight = parent.clientHeight
+
+      const dia = Math.max(parentWidth, parentHeight)
+      const left = e.pageX - parent.offsetLeft - dia / 2
+      const top = e.pageY - parent.offsetTop - dia / 2
+
+      circle.style.width = `${dia}px`
+      circle.style.height = `${dia}px`
+      circle.style.left = `${left}px`
+      circle.style.top = `${top}px`
+
+      circle.classList.add('q-button--ripple')
+
+      setTimeout(() => {
+        parent.removeChild(circle)
+      }, 600)
     }
   }
 }
@@ -80,6 +117,9 @@ export default {
   button-status(color)
     background-color color
     border-color color
+    &:active
+      background-color darken(color, 12)
+      border-color darken(color, 12)
 
   .q-button,
   .q-button:active,
@@ -87,6 +127,7 @@ export default {
     outline 0
 
   .q-button
+    position relative
     margin 0
     padding 10px 16px
     display inline-block
@@ -98,6 +139,7 @@ export default {
     border 1px solid $btn-plain-border
     background-color $btn-plain-bg
     border-radius 3px
+    overflow hidden
     cursor pointer
     outline 0
     user-select none
@@ -132,6 +174,9 @@ export default {
     &:hover
       border-color $btn-plain-border-hover
       background-color $btn-plain-bg-hover
+    .q-button--ripple
+      background-color rgba(0,0,0,.06)
+
   .q-button--info, .q-button--info:hover
     button-status($btn-info-color)
   .q-button--primary, .q-button--primary:hover
@@ -142,4 +187,23 @@ export default {
     button-status($btn-warning-color)
   .q-button--error, .q-button--error:hover
     button-status($btn-error-color)
+
+  // ripple
+  .q-button--ripple
+    position absolute
+    border-radius 50%
+    background-color rgba(255,255,255,.26)
+    transform scale(0)
+    animation rippleDrop .6s linear
+
+  @keyframes rippleDrop {
+    50% {
+      transform scale(2)
+      opacity 1
+    }
+    100% {
+      transform scale(2)
+      opacity 0
+    }
+  }
 </style>

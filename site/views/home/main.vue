@@ -10,7 +10,7 @@
       router-link(to="/guide") Guide
     .component-content
       section.component
-        h3 Menu
+        h2 Menu
         .component-example
           q-menu.example-menu(v-bind="menu")
             q-menu-item(index="1" title="首页")
@@ -22,15 +22,13 @@
               q-submenu-item(index="4-3" title="体育")
             q-menu-item(index="5" title="活动")
       section.component
-        h3 Button
+        h2 Button
+        h3 基础按钮
+        p 按钮的基础用法
         .component-example
           div
             q-button.button-demo Button
             q-button.button-demo 按钮
-          div
-            q-button.button-demo(size="small") Small
-            q-button.button-demo Default
-            q-button.button-demo(size="large") Large
           div
             q-button.button-demo Plain
             q-button.button-demo(color="info") Info
@@ -40,20 +38,48 @@
             q-button.button-demo(color="error") Error
             q-button.button-demo(color="purple") Custom
           div
-            q-button.button-demo(disabled) Plain
-            q-button.button-demo(color="info" disabled) Info
-            q-button.button-demo(color="primary" disabled) Primary
-            q-button.button-demo(color="success" disabled) Success
-            q-button.button-demo(color="warning" disabled) Warning
-            q-button.button-demo(color="error" disabled) Error
-            q-button.button-demo(color="purple" disabled) Custom
-          div
             q-button.button-demo(round) Plain
             q-button.button-demo(color="info" round) Info
             q-button.button-demo(color="primary" round) Primary
             q-button.button-demo(color="success" round) Success
             q-button.button-demo(color="warning" round) Warning
             q-button.button-demo(color="error" round) Error
+        h3 禁用状态
+        .component-example
+          div
+            q-button.button-demo(disabled) Plain
+            q-button.button-demo(color="info" disabled) Info
+            q-button.button-demo(color="primary" disabled) Primary
+            q-button.button-demo(color="success" disabled) Success
+            q-button.button-demo(color="warning" disabled) Warning
+            q-button.button-demo(color="error" disabled) Error
+        h3 波纹按钮
+        p 点击触发水波纹效果
+        .component-example
+          div
+            q-button.button-demo(ripple) Ripple
+            q-button.button-demo(color="info" ripple) Ripple
+            q-button.button-demo(color="primary" ripple) Ripple
+            q-button.button-demo(color="success" ripple) Ripple
+            q-button.button-demo(color="warning" ripple) Ripple
+            q-button.button-demo(color="error" ripple) Ripple
+        h3 大小尺寸
+        p 提供大中小三种尺寸，默认中等大小
+        .component-example
+          div
+            q-button.button-demo(size="small") Small
+            q-button.button-demo Medium
+            q-button.button-demo(size="large") Large
+            q-button.button-demo(size="large" color="primary") Large
+            q-button.button-demo(color="primary") Medium
+            q-button.button-demo(size="small" color="primary") Small
+          div
+            q-button.button-demo(size="small" round) Small
+            q-button.button-demo(round) Medium
+            q-button.button-demo(size="large" round) Large
+            q-button.button-demo(size="large" color="primary" round) Large
+            q-button.button-demo(color="primary" round) Medium
+            q-button.button-demo(size="small" color="primary" round) Small
 </template>
 
 <script>
@@ -108,13 +134,23 @@ export default {
     margin 0 auto
     width 800px
   .component
+    margin-bottom 60px
+    h2
+      margin-bottom 32px
+      font-size 28px
     h3
+      margin 0
       font-size 20px
+      color #222
       font-weight 400
+    p
+      margin 8px 0 0 0
+      font-size 14px
+      color #888
     .component-example
+      margin 16px 0 40px 0
       border 1px solid #ebedf0
       border-radius 2px
-      margin 0 0 16px
       padding 24px
   .example-menu
     line-height 46px
