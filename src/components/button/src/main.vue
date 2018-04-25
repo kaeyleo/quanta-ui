@@ -18,6 +18,10 @@ export default {
     round: {
       type: Boolean
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     color: {
       type: String,
       default: 'plain'
@@ -38,7 +42,8 @@ export default {
       return {
         [`${prefix}--${this.size}`]: !!this.size,
         [`${prefix}--${this.color}`]: !!this.color,
-        [`${prefix}--round`]: this.round
+        [`${prefix}--round`]: this.round,
+        [`disabled`]: this.disabled
       }
     }
   }
@@ -81,6 +86,14 @@ export default {
     transition all .2s
     &:not(.q-button--plain):hover
       opacity .8
+    &.disabled
+      cursor not-allowed
+      opacity .5
+      &:hover
+        opacity .5
+      &.q-button--plain
+        border-color $borderColor
+        background-color $bgColor
 
   // Size
   .q-button--large

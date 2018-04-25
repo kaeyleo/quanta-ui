@@ -40,6 +40,14 @@
             q-button.button-demo(color="error") Error
             q-button.button-demo(color="purple") Custom
           div
+            q-button.button-demo(disabled) Plain
+            q-button.button-demo(color="info" disabled) Info
+            q-button.button-demo(color="primary" disabled) Primary
+            q-button.button-demo(color="success" disabled) Success
+            q-button.button-demo(color="warning" disabled) Warning
+            q-button.button-demo(color="error" disabled) Error
+            q-button.button-demo(color="purple" disabled) Custom
+          div
             q-button.button-demo(round) Plain
             q-button.button-demo(color="info" round) Info
             q-button.button-demo(color="primary" round) Primary
@@ -111,7 +119,7 @@ export default {
   .example-menu
     line-height 46px
   .button-demo
-    margin 8px 6px
+    margin 6px 3px
 
   // custom button color
   .q-button--purple, .q-button--purple:hover
