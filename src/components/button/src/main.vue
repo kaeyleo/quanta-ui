@@ -65,8 +65,8 @@ export default {
       const circle = document.createElement('div')
       parent.appendChild(circle)
 
-      const parentWidth = parent.clientWidth
-      const parentHeight = parent.clientHeight
+      const parentWidth = parent.clientWidth + 10
+      const parentHeight = parent.clientHeight + 10
 
       const dia = Math.max(parentWidth, parentHeight)
       const left = e.pageX - parent.offsetLeft - dia / 2
