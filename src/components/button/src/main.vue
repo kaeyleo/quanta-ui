@@ -24,6 +24,10 @@ export default {
     round: {
       type: Boolean
     },
+    text: {
+      type: Boolean,
+      default: false
+    },
     ripple: {
       type: Boolean,
       default: false
@@ -51,6 +55,7 @@ export default {
 
       return {
         [`${prefix}--loading`]: this.loading,
+        [`${prefix}--text`]: this.text,
         [`${prefix}--${this.size}`]: !!this.size,
         [`${prefix}--${this.color}`]: !!this.color,
         [`${prefix}--round`]: this.round,
@@ -125,6 +130,19 @@ export default {
     &:active
       background-color darken(color, 12)
       border-color darken(color, 12)
+    &.q-button--text
+      color color
+      background-color transparent
+      border-color transparent
+      &:not(.disabled):hover
+        opacity 1
+        background-color lighten(color, 90%)
+      &:not(.disabled):active
+        background-color lighten(color, 76%)
+      &.disabled
+        background-color lighten(color, 90%)
+      .q-button--ripple
+        background-color alpha(color, 0.16)
 
   .q-button,
   .q-button:active,
@@ -158,9 +176,6 @@ export default {
       opacity .5
       &:hover
         opacity .5
-      &.q-button--plain
-        border-color $btn-plain-border
-        background-color $btn-plain-bg
 
   .q-button__text
     transition all .3s
@@ -208,10 +223,24 @@ export default {
     &:hover
       border-color $btn-plain-border-hover
       background-color $btn-plain-bg-hover
-    .q-button--ripple
-      background-color rgba(0,0,0,.06)
+    &.disabled
+      border-color $btn-plain-border
+      background-color $btn-plain-bg
     &.q-button--loading:before
       border-color #888 transparent transparent
+    &.q-button--text
+      border-color transparent
+      background-color transparent
+      &:hover
+        background-color lighten(#333, 90%)
+      &:active
+        background-color lighten(#333, 76%)
+      &.disabled
+        background-color lighten(#333, 90%)
+      .q-button--ripple
+        background-color alpha(#333, 0.16)
+    .q-button--ripple
+      background-color rgba(0,0,0,.06)
 
   .q-button--info, .q-button--info:hover
     button-status($btn-info-color)

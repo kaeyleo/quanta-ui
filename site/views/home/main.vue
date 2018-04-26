@@ -27,10 +27,7 @@
         p 按钮的基础用法
         .component-example
           div
-            q-button.button-demo Button
-            q-button.button-demo 按钮
-          div
-            q-button.button-demo Plain
+            q-button.button-demo Default
             q-button.button-demo(color="info") Info
             q-button.button-demo(color="primary") Primary
             q-button.button-demo(color="success") Success
@@ -38,24 +35,49 @@
             q-button.button-demo(color="error") Error
             q-button.button-demo(color="purple") Custom
           div
-            q-button.button-demo(round) Plain
+            q-button.button-demo(round) Default
             q-button.button-demo(color="info" round) Info
             q-button.button-demo(color="primary" round) Primary
             q-button.button-demo(color="success" round) Success
             q-button.button-demo(color="warning" round) Warning
             q-button.button-demo(color="error" round) Error
-        h3 禁用状态
+        h3 文字按钮
+        p 添加 text 属性
         .component-example
           div
-            q-button.button-demo(disabled) Plain
+            q-button.button-demo(text) Default
+            q-button.button-demo(color="info" text) Info
+            q-button.button-demo(color="primary" text) Primary
+            q-button.button-demo(color="success" text) Success
+            q-button.button-demo(color="warning" text) Warning
+            q-button.button-demo(color="error" text) Error
+        h3 禁用状态
+        p 添加 disabled 属性，按钮将被禁用
+        .component-example
+          div
+            q-button.button-demo(text disabled) Default
+            q-button.button-demo(color="info" text disabled) Info
+            q-button.button-demo(color="primary" text disabled) Primary
+            q-button.button-demo(color="success" text disabled) Success
+            q-button.button-demo(color="warning" text disabled) Warning
+            q-button.button-demo(color="error" text disabled) Error
+          div
+            q-button.button-demo(disabled) Default
             q-button.button-demo(color="info" disabled) Info
             q-button.button-demo(color="primary" disabled) Primary
             q-button.button-demo(color="success" disabled) Success
             q-button.button-demo(color="warning" disabled) Warning
             q-button.button-demo(color="error" disabled) Error
         h3 波纹按钮
-        p 点击触发水波纹效果
+        p 添加 ripple 属性，点击时触发水波纹效果
         .component-example
+          div
+            q-button.button-demo(ripple text) Default
+            q-button.button-demo(color="info" text ripple) Info
+            q-button.button-demo(color="primary" text ripple) Primary
+            q-button.button-demo(color="success" text ripple) Success
+            q-button.button-demo(color="warning" text ripple) Warning
+            q-button.button-demo(color="error" text ripple) Error
           div
             q-button.button-demo(ripple) Ripple
             q-button.button-demo(color="info" ripple) Ripple
