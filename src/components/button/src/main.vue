@@ -1,7 +1,7 @@
 <template lang="pug">
   button.q-button(
     :class="classes"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     @click="handleClick"
   )
     span.q-button__text(
@@ -17,6 +17,10 @@ export default {
   name: 'q-button',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: false
+    },
     round: {
       type: Boolean
     },
@@ -46,6 +50,7 @@ export default {
       const prefix = 'q-button'
 
       return {
+        [`${prefix}--loading`]: this.loading,
         [`${prefix}--${this.size}`]: !!this.size,
         [`${prefix}--${this.color}`]: !!this.color,
         [`${prefix}--round`]: this.round,
@@ -157,6 +162,35 @@ export default {
         border-color $btn-plain-border
         background-color $btn-plain-bg
 
+  .q-button__text
+    transition all .3s
+
+  .q-button--loading
+    opacity .5
+    pointer-events none
+    &:before
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      margin-top -7px
+      margin-left -7px
+      width 12px
+      height 12px
+      border-radius 50%
+      border 2px solid
+      border-color #ffffff transparent transparent
+      animation button-spin .8s linear
+      animation-iteration-count infinite
+    .q-button__text
+      opacity 0
+
+  @keyframes button-spin {
+    100% {
+      transform rotate(360deg)
+    }
+  }
+
   // Size
   .q-button--large
     padding 11px 24px
@@ -176,6 +210,8 @@ export default {
       background-color $btn-plain-bg-hover
     .q-button--ripple
       background-color rgba(0,0,0,.06)
+    &.q-button--loading:before
+      border-color #888 transparent transparent
 
   .q-button--info, .q-button--info:hover
     button-status($btn-info-color)

@@ -80,6 +80,17 @@
             q-button.button-demo(size="large" color="primary" round) Large
             q-button.button-demo(color="primary" round) Medium
             q-button.button-demo(size="small" color="primary" round) Small
+        h3 加载中
+        p 添加 loading 属性，使按钮处于加载中状态
+        .component-example
+          div
+            q-button.button-demo(loading) Button
+            q-button.button-demo(color="primary" loading) Button
+            q-button.button-demo(
+              color="primary"
+              :loading="button.loading"
+              @click="setButtonLoading"
+            ) 点击加载
 </template>
 
 <script>
@@ -104,7 +115,18 @@ export default {
       menu: {
         activeIndex: 1,
         activeTextColor: '#409EFF'
+      },
+      button: {
+        loading: false
       }
+    }
+  },
+  methods: {
+    setButtonLoading () {
+      this.button.loading = true
+      setTimeout(() => {
+        this.button.loading = false
+      }, 1600)
     }
   }
 }
