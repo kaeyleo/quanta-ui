@@ -102,6 +102,13 @@
             q-button.button-demo(size="large" color="primary" round) Large
             q-button.button-demo(color="primary" round) Medium
             q-button.button-demo(size="small" color="primary" round) Small
+        h3 长按钮
+        p 添加 long 属性，按钮将适应容器宽度，撑满整行
+        .component-example
+          div
+            q-button.button-demo(long) Long Button
+          div
+            q-button.button-demo(color="primary" long) Long Button
         h3 加载中
         p 添加 loading 属性，使按钮处于加载中状态
         .component-example

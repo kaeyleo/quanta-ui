@@ -22,7 +22,12 @@ export default {
       default: false
     },
     round: {
-      type: Boolean
+      type: Boolean,
+      default: false
+    },
+    long: {
+      type: Boolean,
+      default: false
     },
     text: {
       type: Boolean,
@@ -59,6 +64,7 @@ export default {
         [`${prefix}--${this.size}`]: !!this.size,
         [`${prefix}--${this.color}`]: !!this.color,
         [`${prefix}--round`]: this.round,
+        [`${prefix}--long`]: this.long,
         [`disabled`]: this.disabled
       }
     }
@@ -216,6 +222,8 @@ export default {
   // Style
   .q-button--round
     border-radius 20px
+  .q-button--long
+    width 100%
 
   // Color
   .q-button--plain
