@@ -79,12 +79,12 @@
             q-button.button-demo(color="warning" text ripple) Warning
             q-button.button-demo(color="error" text ripple) Error
           div
-            q-button.button-demo(ripple) Ripple
-            q-button.button-demo(color="info" ripple) Ripple
-            q-button.button-demo(color="primary" ripple) Ripple
-            q-button.button-demo(color="success" ripple) Ripple
-            q-button.button-demo(color="warning" ripple) Ripple
-            q-button.button-demo(color="error" ripple) Ripple
+            q-button.button-demo(ripple) Default
+            q-button.button-demo(color="info" ripple) Info
+            q-button.button-demo(color="primary" ripple) Primary
+            q-button.button-demo(color="success" ripple) Success
+            q-button.button-demo(color="warning" ripple) Warning
+            q-button.button-demo(color="error" ripple) Error
         h3 大小尺寸
         p 提供大中小三种尺寸，默认中等大小
         .component-example
