@@ -10,7 +10,7 @@
       router-link(to="/guide") Guide
     .component-content
       section.component
-        h2 Menu
+        h2 Menu 菜单
         .component-example
           q-menu.example-menu(v-bind="menu")
             q-menu-item(index="1" title="首页")
@@ -22,7 +22,7 @@
               q-submenu-item(index="4-3" title="体育")
             q-menu-item(index="5" title="活动")
       section.component
-        h2 Button
+        h2 Button 按钮
         h3 基础按钮
         p 按钮的基础用法
         .component-example
@@ -120,6 +120,15 @@
               :loading="button.loading"
               @click="setButtonLoading"
             ) 点击加载
+      section.component
+        h2 Callout 提示面板
+        h3 基础用法
+        p 提供标题、段落和高亮颜色
+        .component-example
+          div
+            q-callout.callout-demo(title="Tip") This is a default callout.
+            q-callout.callout-demo(type="warning" title="Warning") This is a warning callout.
+            q-callout.callout-demo(type="error" title="Error") This is a error callout.
 </template>
 
 <script>
@@ -213,4 +222,10 @@ export default {
     color #fff
     border-color #8073DD
     background-color #8073DD
+
+  // callout
+  .callout-demo
+    margin-bottom 16px
+    &:last-of-type
+      margin-bottom 0
 </style>

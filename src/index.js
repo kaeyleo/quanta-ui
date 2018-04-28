@@ -3,8 +3,16 @@ import Menu from './components/menu'
 import MenuItem from './components/menu-item'
 import SubmenuItem from './components/submenu-item'
 import Button from './components/button'
+import Callout from './components/callout'
 
-const components = [Header, Menu, MenuItem, SubmenuItem, Button]
+const components = [
+  Header,
+  Menu,
+  MenuItem,
+  SubmenuItem,
+  Button,
+  Callout
+]
 
 const install = function (Vue, options = {}) {
   components.map(component => {
@@ -18,7 +26,8 @@ export {
   Menu,
   MenuItem,
   SubmenuItem,
-  Button
+  Button,
+  Callout
 }
 
 export default {
