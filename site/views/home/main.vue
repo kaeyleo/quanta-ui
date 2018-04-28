@@ -138,6 +138,23 @@
             q-callout.callout-demo(title="Info" type="info" light) This is an info callout.
             q-callout.callout-demo(title="Warning" type="warning" light) This is a warning callout.
             q-callout.callout-demo(title="Error" type="error" light) This is a error callout.
+      section.component
+        h2 Alert 警告
+        h3 基础用法
+        p 用于展示警告信息，内容尽可能简短精炼
+        .component-example
+          div
+            q-alert.alert-demo This is a message.
+            q-alert.alert-demo(type="info") This is a informations.
+            q-alert.alert-demo(type="success") This is a successful message.
+            q-alert.alert-demo(type="warning") This is a warning notice.
+            q-alert.alert-demo(type="error") This is an error message.
+        h3 可关闭的警告
+        p 添加 closable 属性，将会显示关闭按钮，点击可关闭警告
+        .component-example
+          div
+            q-alert.alert-demo(closable) This is a message.
+            q-alert.alert-demo(type="success" closable) This is a successful message.
 </template>
 
 <script>
@@ -233,8 +250,11 @@ export default {
     background-color #8073DD
 
   // callout
-  .callout-demo
+  .callout-demo, .alert-demo
     margin-bottom 16px
     &:last-of-type
       margin-bottom 0
+  // alert
+  .alert-demo
+    width 320px
 </style>

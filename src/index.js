@@ -4,6 +4,7 @@ import MenuItem from './components/menu-item'
 import SubmenuItem from './components/submenu-item'
 import Button from './components/button'
 import Callout from './components/callout'
+import Alert from './components/alert'
 
 const components = [
   Header,
@@ -11,7 +12,8 @@ const components = [
   MenuItem,
   SubmenuItem,
   Button,
-  Callout
+  Callout,
+  Alert
 ]
 
 const install = function (Vue, options = {}) {
@@ -27,7 +29,8 @@ export {
   MenuItem,
   SubmenuItem,
   Button,
-  Callout
+  Callout,
+  Alert
 }
 
 export default {
