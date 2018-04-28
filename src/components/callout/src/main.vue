@@ -1,6 +1,6 @@
 <template lang="pug">
   .q-callout(
-    :class="[ 'q-callout--' + type ]"
+    :class="classes"
   )
     .q-callout__title(
       v-if="!!title"
@@ -27,6 +27,21 @@ export default {
       validator (value) {
         return oneOf(value, ['tip', 'warning', 'error'])
       }
+    },
+    light: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    classes () {
+      const prefix = 'q-callout'
+
+      return {
+        [`${prefix}--${this.type}`]: !!this.type,
+        [`${prefix}--light`]: this.light
+      }
     }
   }
 }
@@ -49,11 +64,19 @@ export default {
 
   .q-callout--tip
     background-color #E8F5FF
-    border-color #79C6FF
+    border-left-color #79C6FF
   .q-callout--warning
     background-color #FFF5DC
-    border-color #FFD567
+    border-left-color #FFD567
   .q-callout--error
     background-color #FFEFF1
-    border-color #FF8E90
+    border-left-color #FF8E90
+
+  .q-callout--light
+    padding 12px 16px
+    border-top 1px solid #eee
+    border-right 1px solid #eee
+    border-bottom 1px solid #eee
+    border-left-width 3px
+    background-color transparent
 </style>

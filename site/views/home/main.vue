@@ -129,6 +129,13 @@
             q-callout.callout-demo(title="Tip") This is a default callout.
             q-callout.callout-demo(type="warning" title="Warning") This is a warning callout.
             q-callout.callout-demo(type="error" title="Error") This is a error callout.
+        h3 轻量的提示面板
+        p 添加 light 属性，获得紧凑的布局和更浅的色调，适用于极简的UI设计和不重要的内容提示
+        .component-example
+          div
+            q-callout.callout-demo(title="Tip" light) This is a default callout.
+            q-callout.callout-demo(type="warning" light title="Warning") This is a warning callout.
+            q-callout.callout-demo(type="error" light title="Error") This is a error callout.
 </template>
 
 <script>
