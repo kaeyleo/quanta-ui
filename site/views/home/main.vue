@@ -155,6 +155,14 @@
           div
             q-alert.alert-demo(closable) This is a message.
             q-alert.alert-demo(type="success" closable) This is a successful message.
+        h3 自定义关闭事件
+        p 绑定 on-close 事件，在关闭时触发
+        .component-example
+          div
+            q-alert.alert-demo(
+              @on-close="closeAlert"
+              closable
+            ) This is a message.
 </template>
 
 <script>
@@ -191,6 +199,10 @@ export default {
       setTimeout(() => {
         this.button.loading = false
       }, 1600)
+    },
+
+    closeAlert () {
+      alert('Bye bye Alert!')
     }
   }
 }
