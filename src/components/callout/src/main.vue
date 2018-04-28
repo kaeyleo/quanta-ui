@@ -23,9 +23,9 @@ export default {
     },
     type: {
       type: String,
-      default: 'tip',
+      default: 'primary',
       validator (value) {
-        return oneOf(value, ['tip', 'warning', 'error'])
+        return oneOf(value, ['primary', 'info', 'warning', 'error'])
       }
     },
     light: {
@@ -62,9 +62,12 @@ export default {
     font-size 15px
     line-height 1.4
 
-  .q-callout--tip
+  .q-callout--primary
     background-color #E8F5FF
     border-left-color #79C6FF
+  .q-callout--info
+    background-color #F3F5F7
+    border-left-color #D4D9DD
   .q-callout--warning
     background-color #FFF5DC
     border-left-color #FFD567
