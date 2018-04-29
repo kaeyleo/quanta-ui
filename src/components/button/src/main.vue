@@ -133,7 +133,7 @@ export default {
   button-status(color)
     background-color color
     border-color color
-    &:active
+    &:not(.disabled):active
       background-color darken(color, 12)
       border-color darken(color, 12)
     &.q-button--text
@@ -145,6 +145,7 @@ export default {
         background-color lighten(color, 90%)
       &:not(.disabled):active
         background-color lighten(color, 76%)
+        border-color transparent
       &.disabled
         background-color lighten(color, 90%)
       .q-button--ripple
@@ -231,6 +232,9 @@ export default {
     &:hover
       border-color $btn-plain-border-hover
       background-color $btn-plain-bg-hover
+    &:not(.disabled):active
+      border-color darken($btn-plain-border-hover, 10%)
+      background-color darken($btn-plain-bg-hover, 6%)
     &.disabled
       border-color $btn-plain-border
       background-color $btn-plain-bg
@@ -243,6 +247,7 @@ export default {
         background-color lighten(#333, 90%)
       &:active
         background-color lighten(#333, 76%)
+        border-color transparent
       &.disabled
         background-color lighten(#333, 90%)
       .q-button--ripple
