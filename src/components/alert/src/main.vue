@@ -77,15 +77,15 @@ export default {
         color darken(borderColor, 40%)
 
   .q-alert--primary
-    alert-type(#ADD7FF, #E8F5FF)
+    alert-type(#9ACEFF, #E3F3FF)
   .q-alert--info
-    alert-type(#D6DCE1, #F4F6F8)
+    alert-type(#CDD5DB, #F2F4F7)
   .q-alert--success
-    alert-type(#B8E5B6, #EEFBEE)
+    alert-type(#AFE0AD, #EAFCEA)
   .q-alert--warning
-    alert-type(#FFDBA1, #FFF8EB)
+    alert-type(#FFD48E, #FFF5E2)
   .q-alert--error
-    alert-type(#FFC0C5, #FEEFF0)
+    alert-type(#FFC0C5, #FFEFF0)
 
   .q-alert__close
     position absolute
