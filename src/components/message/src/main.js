@@ -14,14 +14,22 @@ const Message = options => {
   const instance = new MessageConstructor({
     data: options
   })
+
+  const duration = options.duration
+  instance.duration = (typeof duration === 'number' && duration !== 0)
+    ? duration
+    : defaultOptions.duration
+
   instance.vm = instance.$mount()
   document.body.appendChild(instance.vm.$el)
-  // set props
+
   instance.vm.visible = true
+
   const top = instance.vm.top
   instance.vm.top = (!!top && typeof top === 'number')
     ? top
     : defaultOptions.top
+
   // 'primary', 'success', 'warning', 'error'
   instance.vm.type = typeof instance.vm.type === 'string'
     ? (instance.vm.type || defaultOptions.type)
@@ -38,5 +46,7 @@ const Message = options => {
 }
 
 // TODO: prop validator
+
+// TODO: remove the destroyed instance
 
 export default Message

@@ -1,9 +1,9 @@
 <template lang="pug">
-  transition(name="message-fade")
+  transition(name="message-fade" @after-leave="destroy")
     .q-message(
+      v-if="visible"
       :class="classes"
       :style="{ top: `${top}px` }"
-      v-show="visible"
     )
       span.q-message__content {{ message }}
 </template>
@@ -18,6 +18,7 @@ export default {
     return {
       duration: 0,
       message: '',
+      timer: null,
       top: 0,
       types: '',
       visible: false
@@ -42,12 +43,30 @@ export default {
         [`${prefix}--${this.type}`]: !!this.type
       }
     }
+  },
+
+  methods: {
+    close () {
+      this.timer && clearTimeout(this.timer)
+      this.visible = false
+    },
+
+    destroy () {
+      this.$destroy(true)
+      this.$el.parentNode.removeChild(this.$el)
+    },
+
+    setTimer () {
+      if (!this.duration) return
+      this.timer = setTimeout(() => {
+        this.close()
+      }, this.duration)
+    }
+  },
+
+  mounted () {
+    this.setTimer()
   }
-
-  // TODO: destroy
-
-  // TODO: close
-
 }
 </script>
 
