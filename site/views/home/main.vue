@@ -218,8 +218,7 @@ export default {
     showMessage (type) {
       this.$message({
         message: `This is a '${type}' message`,
-        type: type,
-        top: 100
+        type
       })
     }
   }

@@ -18,12 +18,16 @@ const Message = options => {
   document.body.appendChild(instance.vm.$el)
   // set props
   instance.vm.visible = true
+  const top = instance.vm.top
+  instance.vm.top = (!!top && typeof top === 'number')
+    ? top
+    : defaultOptions.top
   // 'primary', 'success', 'warning', 'error'
   instance.vm.type = typeof instance.vm.type === 'string'
     ? (instance.vm.type || defaultOptions.type)
     : defaultOptions.type
 
-  let offsetTop = defaultOptions.top
+  let offsetTop = instance.vm.top
 
   for (let i = 0, len = instances.length; i < len; i++) {
     offsetTop += instances[i].$el.offsetHeight + 16
