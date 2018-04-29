@@ -22,6 +22,8 @@ const install = function (Vue, options = {}) {
   components.map(component => {
     Vue.component(component.name, component)
   })
+
+  Vue.prototype.$message = Message
 }
 
 export {

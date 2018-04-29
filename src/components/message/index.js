@@ -1,7 +1,3 @@
-import Message from './src/main'
-
-Message.install = function (Vue) {
-  Vue.component(Message.name, Message)
-}
+import Message from './src/main.js'
 
 export default Message

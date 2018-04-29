@@ -169,12 +169,10 @@
         p 轻量的全局提示，为用户提供快速反馈
         .component-example
           div
-            q-message.message-demo 这是一条消息提示
-            q-message.message-demo This is a message.
-            q-message.message-demo(type="success") This is a successful message.
-            q-message.message-demo(type="warning") This is a warning message.
-            q-message.message-demo(type="error") This is a error message.
-            q-message.message-demo 这是一条很长很长的消息提示这是一条很长很长的消息提示这是一条很长很长的消息提示这是一条很长很长的消息提示
+            q-button.message-demo(@click="showMessage('primary')") Primary
+            q-button.message-demo(@click="showMessage('success')") Success
+            q-button.message-demo(@click="showMessage('warning')") Warning
+            q-button.message-demo(@click="showMessage('error')") Error
 </template>
 
 <script>
@@ -215,6 +213,14 @@ export default {
 
     closeAlert () {
       alert('Bye bye Alert!')
+    },
+
+    showMessage (type) {
+      this.$message({
+        message: `This is a '${type}' message`,
+        type: type,
+        top: 100
+      })
     }
   }
 }
@@ -274,7 +280,7 @@ export default {
     background-color #8073DD
 
   // callout
-  .callout-demo, .alert-demo, .message-demo
+  .callout-demo, .alert-demo
     margin-bottom 16px
     &:last-of-type
       margin-bottom 0
@@ -282,5 +288,5 @@ export default {
   .alert-demo
     width 320px
   .message-demo
-    display block
+    margin-right 8px
 </style>
