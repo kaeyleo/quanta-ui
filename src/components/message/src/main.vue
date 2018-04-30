@@ -1,7 +1,7 @@
 <template lang="pug">
   transition(name="message-fade" @after-leave="destroy")
     .q-message(
-      v-if="visible"
+      v-show="visible"
       :class="classes"
       :style="{ top: `${top}px` }"
     )
@@ -18,6 +18,7 @@ export default {
     return {
       duration: 0,
       message: '',
+      onClose: null,
       timer: null,
       top: 0,
       types: '',
@@ -49,6 +50,7 @@ export default {
     close () {
       this.timer && clearTimeout(this.timer)
       this.visible = false
+      this.onClose(this)
     },
 
     destroy () {
@@ -85,6 +87,7 @@ export default {
     transform translateX(-50%)
     border-radius 4px
     box-shadow 0 5px 22px rgba(0,0,0,0.16)
+    transition 1s
     // border-left 4px solid #3DA8F5
 
     &__content

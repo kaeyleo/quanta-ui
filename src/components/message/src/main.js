@@ -4,6 +4,7 @@ import MessageComponent from './main.vue'
 const MessageConstructor = Vue.extend(MessageComponent)
 
 const instances = []
+let key = 1
 const defaultOptions = {
   top: 24,
   type: 'primary',
@@ -14,6 +15,9 @@ const Message = options => {
   const instance = new MessageConstructor({
     data: options
   })
+
+  instance.id = key++
+  instance.onClose = Message.close
 
   const duration = options.duration
   instance.duration = (typeof duration === 'number' && duration !== 0)
@@ -45,8 +49,26 @@ const Message = options => {
   instances.push(instance)
 }
 
-// TODO: prop validator
+Message.close = vm => {
+  const id = vm.id
+  const len = instances.length
+  let index = 0
+  let height = 0
 
-// TODO: remove the destroyed instance
+  const instance = instances.find((e, i) => {
+    index = i
+    return e.id === id
+  })
+
+  height = instance.$el.offsetHeight
+  instances.splice(index, 1)
+
+  for (let i = index; i < len - 1; i++) {
+    const offsetTop = parseInt(instances[i].$el.style.top) - height - 16
+    instances[i].$el.style.top = `${offsetTop}px`
+  }
+}
+
+// TODO: prop validator
 
 export default Message
