@@ -173,6 +173,16 @@
             q-button.message-demo(@click="showMessage('success')") Success
             q-button.message-demo(@click="showMessage('warning')") Warning
             q-button.message-demo(@click="showMessage('error')") Error
+      section.component
+        h2 Tag 标签
+        h3 基础用法
+        p 用以标记和分类
+        .component-example
+          div
+            q-tag.tag-demo Tag
+            q-tag.tag-demo 标签
+            q-tag.tag-demo
+              router-link(to="/guide") Hyperlink
 </template>
 
 <script>
@@ -287,5 +297,8 @@ export default {
   .alert-demo
     width 320px
   .message-demo
+    margin-right 8px
+  // tag
+  .tag-demo
     margin-right 8px
 </style>

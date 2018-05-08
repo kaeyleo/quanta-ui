@@ -6,6 +6,7 @@ import Button from './components/button'
 import Callout from './components/callout'
 import Alert from './components/alert'
 import Message from './components/message'
+import Tag from './components/tag'
 
 const components = [
   Header,
@@ -15,7 +16,8 @@ const components = [
   Button,
   Callout,
   Alert,
-  Message
+  Message,
+  Tag
 ]
 
 const install = function (Vue, options = {}) {
@@ -35,7 +37,8 @@ export {
   Button,
   Callout,
   Alert,
-  Message
+  Message,
+  Tag
 }
 
 export default {
