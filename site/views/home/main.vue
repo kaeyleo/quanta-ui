@@ -183,6 +183,17 @@
             q-tag.tag-demo 标签
             q-tag.tag-demo
               router-link(to="/guide") Hyperlink
+            q-tag.tag-demo(round) Round
+            q-tag.tag-demo(hollow) Hollow
+        h3 彩色标签
+        p 添加 color 属性，让标签多姿多彩
+        .component-example
+          div
+            q-tag.tag-demo(color="blue") Blue
+            q-tag.tag-demo(color="green") Green
+            q-tag.tag-demo(color="gold") Gold
+            q-tag.tag-demo(color="red") Red
+            q-tag.tag-demo(color="purple") Purple
 </template>
 
 <script>
@@ -300,5 +311,5 @@ export default {
     margin-right 8px
   // tag
   .tag-demo
-    margin-right 8px
+    margin 4px 8px 4px 0
 </style>
