@@ -7,6 +7,9 @@ import Callout from './components/callout'
 import Alert from './components/alert'
 import Message from './components/message'
 import Tag from './components/tag'
+import Dropdown from './components/dropdown'
+import DropdownMenu from './components/dropdown-menu'
+import DropdownItem from './components/dropdown-item'
 
 const components = [
   Header,
@@ -17,7 +20,10 @@ const components = [
   Callout,
   Alert,
   Message,
-  Tag
+  Tag,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 ]
 
 const install = function (Vue, options = {}) {
@@ -38,7 +44,10 @@ export {
   Callout,
   Alert,
   Message,
-  Tag
+  Tag,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 }
 
 export default {

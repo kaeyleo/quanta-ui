@@ -194,6 +194,19 @@
             q-tag.tag-demo(color="gold") Gold
             q-tag.tag-demo(color="red") Red
             q-tag.tag-demo(color="purple") Purple
+      section.component
+        h2 Dropdown 下拉菜单
+        h3 基础用法
+        p 展示折叠的下拉菜单
+        .component-example
+          div
+            q-dropdown
+              span 选择分类
+              q-dropdown-menu(slot="dropdown")
+                q-dropdown-item 保时捷
+                q-dropdown-item 凯迪拉克
+                q-dropdown-item 路虎
+                q-dropdown-item 玛莎拉蒂
 </template>
 
 <script>
