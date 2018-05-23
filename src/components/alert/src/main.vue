@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { oneOf } from '../../../script/util'
+import { oneOf } from 'src/script/util'
 
 export default {
   name: 'q-alert',

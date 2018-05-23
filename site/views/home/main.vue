@@ -200,9 +200,43 @@
         p 展示折叠的下拉菜单
         .component-example
           div
-            q-dropdown
+            q-dropdown.dropdown-demo
               span 选择分类
               q-dropdown-menu(slot="dropdown")
+                q-dropdown-item 保时捷
+                q-dropdown-item 凯迪拉克
+                q-dropdown-item 路虎
+                q-dropdown-item 玛莎拉蒂
+        h3 菜单尺寸
+        p 提供三种菜单尺寸，默认为 medium 中等大小
+        .component-example
+          div
+            q-dropdown.dropdown-demo
+              span small
+              q-dropdown-menu(
+                slot="dropdown"
+                size="small"
+              )
+                q-dropdown-item 保时捷
+                q-dropdown-item 凯迪拉克
+                q-dropdown-item 路虎
+                q-dropdown-item 玛莎拉蒂
+            q-dropdown.dropdown-demo
+              span medium
+              q-dropdown-menu(
+                slot="dropdown"
+                size="medium"
+              )
+                q-dropdown-item 保时捷
+                q-dropdown-item 凯迪拉克
+                q-dropdown-item 路虎
+                q-dropdown-item 玛莎拉蒂
+            q-dropdown.dropdown-demo
+              span large
+              q-dropdown-menu(
+                slot="dropdown"
+                size="large"
+              )
                 q-dropdown-item 保时捷
                 q-dropdown-item 凯迪拉克
                 q-dropdown-item 路虎
@@ -325,4 +359,11 @@ export default {
   // tag
   .tag-demo
     margin 4px 8px 4px 0
+  // dropdown
+  .dropdown-demo
+    margin-right 80px
+    span
+      display inline-block
+      padding 8px 0
+      cursor pointer
 </style>
