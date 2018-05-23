@@ -1,6 +1,6 @@
 <template lang="pug">
   .q-dropdown(ref="dropdown")
-    .q-dropdown__rel
+    .q-dropdown__rel(ref="triggerEl")
       slot
     transition(name="slide-up" @after-leave="doDestory")
       .q-dropdown__menu-wrapper(
@@ -10,6 +10,14 @@
 </template>
 
 <script>
+function has (el, parentEl) {
+  while (el !== undefined && el !== null && el.tagName.toUpperCase() !== 'BODY') {
+    if (el === parentEl) return true
+    el = el.parentNode
+  }
+  return false
+}
+
 export default {
   name: 'q-dropdown',
 
@@ -32,6 +40,18 @@ export default {
       this.visible = !this.visible
     },
 
+    hide () {
+      this.visible = false
+    },
+
+    closeMenu (e) {
+      const $el = e.target
+      const $dropdown = this.$refs.dropdown
+      const flag = has($el, $dropdown)
+
+      if (!flag) this.hide()
+    },
+
     doDestory () {
       // TODO: remove event listener
     }
@@ -42,6 +62,7 @@ export default {
 
     if (this.trigger === 'click') {
       $dropdown.addEventListener('click', this.toggle)
+      document.addEventListener('click', this.closeMenu)
     } else if (this.trigger === 'hover') {
       $dropdown.addEventListener('mouseenter', this.toggle)
       $dropdown.addEventListener('mouseleave', this.toggle)
