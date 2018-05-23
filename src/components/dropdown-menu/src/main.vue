@@ -11,9 +11,8 @@ export default {
 
 <style lang="stylus">
   .q-dropdown-menu
-    position absolute
     padding 8px 0
-    min-width 120px
+    min-width 80px
     border-radius 2px
     background-color #fff
     box-sizing border-box

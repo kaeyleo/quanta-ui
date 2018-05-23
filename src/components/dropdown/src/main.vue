@@ -1,11 +1,10 @@
 <template lang="pug">
   .q-dropdown(ref="dropdown")
-    div(ref="triggerEl")
+    .q-dropdown__rel
       slot
     transition(name="slide-up" @after-leave="doDestory")
-      .q-dropdown__wrapper(
+      .q-dropdown__menu-wrapper(
         v-show="visible"
-        :style="{ top: top + 'px' }"
       )
         slot(name="dropdown")
 </template>
@@ -40,11 +39,6 @@ export default {
 
   mounted () {
     const $dropdown = this.$refs.dropdown
-    const $triggerEl = this.$refs.triggerEl
-    const height = $triggerEl.offsetHeight
-    const offsetTop = height
-
-    this.top = offsetTop
 
     if (this.trigger === 'click') {
       $dropdown.addEventListener('click', this.toggle)
@@ -59,8 +53,7 @@ export default {
 <style lang="stylus">
   .q-dropdown
     display inline-block
-    position relative
-    &__wrapper
+    &__menu-wrapper
       position absolute
 
   .slide-up-enter-active
@@ -73,7 +66,7 @@ export default {
     0%
       opacity 0
       transform-origin 0 0
-      transform translateY(-12px)
+      transform translateY(-8px)
     100%
       opacity 1
       transform-origin 0 0
@@ -87,5 +80,5 @@ export default {
     100%
       opacity 0
       transform-origin 0% 0%
-      transform translateY(-12px)
+      transform translateY(-8px)
 </style>
