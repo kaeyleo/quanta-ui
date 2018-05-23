@@ -33,19 +33,26 @@ export default {
 
 <style lang="stylus">
   .q-dropdown-menu
-    padding 10px 0
-    min-width 120px
     border-radius 2px
     background-color #fff
     box-sizing border-box
     box-shadow 0 3px 24px rgba(0, 0, 0, .16)
+    &--small
+      padding 6px 0
+      min-width 80px
+      .q-divider
+        margin 6px 0
+    &--medium
+      padding 8px 0
+      min-width 120px
+      .q-divider
+        margin 8px 0
     &--large
       padding 10px 0
       min-width 160px
       .q-dropdown-item
         padding 10px 16px
         font-size 15px
-    &--small
-      padding 6px 0
-      min-width 80px
+      .q-divider
+        margin 10px 0
 </style>

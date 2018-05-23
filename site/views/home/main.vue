@@ -265,6 +265,21 @@
                 q-dropdown-item 凯迪拉克
                 q-dropdown-item 路虎
                 q-dropdown-item 玛莎拉蒂
+        h3 分割线
+        p 使用 &lt;q-divider&gt; 分割线组件，让列表的展示更有条理
+        .component-example
+          div
+            q-dropdown.dropdown-demo
+              span 下拉菜单
+              q-dropdown-menu(
+                slot="dropdown"
+              )
+                q-dropdown-item Angular
+                q-dropdown-item React
+                q-dropdown-item Vue
+                q-divider
+                q-dropdown-item Python
+                q-dropdown-item Go
 </template>
 
 <script>

@@ -10,6 +10,7 @@ import Tag from './components/tag'
 import Dropdown from './components/dropdown'
 import DropdownMenu from './components/dropdown-menu'
 import DropdownItem from './components/dropdown-item'
+import Divider from './components/divider'
 
 const components = [
   Header,
@@ -23,7 +24,8 @@ const components = [
   Tag,
   Dropdown,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Divider
 ]
 
 const install = function (Vue, options = {}) {
@@ -47,7 +49,8 @@ export {
   Tag,
   Dropdown,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Divider
 }
 
 export default {
