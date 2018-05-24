@@ -2,7 +2,7 @@
   .q-dropdown(ref="dropdown")
     .q-dropdown__rel(ref="triggerEl")
       slot
-    transition(name="slide-up" @after-leave="doDestory")
+    transition(name="slide-up" @after-leave="doDestroy")
       .q-dropdown__menu-wrapper(
         v-show="visible"
       )
@@ -37,7 +37,14 @@ export default {
 
   methods: {
     toggle () {
-      this.visible = !this.visible
+      this.visible ? this.hide() : this.show()
+    },
+
+    show () {
+      this.visible = true
+      if (this.trigger === 'click') {
+        document.addEventListener('click', this.closeMenu)
+      }
     },
 
     hide () {
@@ -52,8 +59,9 @@ export default {
       if (!flag) this.hide()
     },
 
-    doDestory () {
-      // TODO: remove event listener
+    doDestroy () {
+      if (this.trigger !== 'click') return
+      document.removeEventListener('click', this.closeMenu)
     }
   },
 
