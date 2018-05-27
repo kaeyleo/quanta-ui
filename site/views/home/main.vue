@@ -127,6 +127,16 @@
               q-button(color="primary" disabled) Download
               q-button(color="success" disabled) Demo
               q-button(color="warning" disabled) Support
+          div
+            q-button-group.button-demo(size="small")
+              q-button Small
+              q-button Small
+            q-button-group.button-demo
+              q-button Default
+              q-button Default
+            q-button-group.button-demo(size="large")
+              q-button Large
+              q-button Large
         h3 长按钮
         p 添加 long 属性，按钮将适应容器宽度，撑满整行
         .component-example

@@ -154,6 +154,16 @@ export default {
       .q-button--ripple
         background-color alpha(color, 0.16)
 
+  button-size(size)
+    if size == 'default'
+      padding 10px 16px
+      font-size 14px
+    if size == 'small'
+      padding 8px 10px
+    if size == 'large'
+      padding 11px 24px
+      font-size 15px
+
   .q-button,
   .q-button:active,
   .q-button:focus
@@ -162,9 +172,8 @@ export default {
   .q-button
     position relative
     margin 0
-    padding 10px 16px
     display inline-block
-    font-size 14px
+    button-size('default')
     font-weight 500
     color #fff
     line-height 1
@@ -218,10 +227,9 @@ export default {
 
   // Size
   .q-button--large
-    padding 11px 24px
-    font-size 15px
+    button-size('large')
   .q-button--small
-    padding 8px 10px
+    button-size('small')
 
   // Style
   .q-button--round
@@ -300,6 +308,12 @@ export default {
         &:last-child
           border-top-right-radius $btn-border-radius--round
           border-bottom-right-radius $btn-border-radius--round
+    &--small
+      .q-button
+        button-size('small')
+    &--large
+      .q-button
+        button-size('large')
     .q-button
       &:first-child
         border-top-right-radius 0
@@ -324,4 +338,6 @@ export default {
           border-right-color $btn-group-border
       &--round
         border-radius 0
+      &--large, &--small
+        button-size('default')
 </style>

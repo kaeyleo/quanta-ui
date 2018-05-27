@@ -4,6 +4,8 @@
 </template>
 
 <script>
+import { oneOf } from 'src/script/util'
+
 export default {
   name: 'q-button-group',
 
@@ -11,6 +13,13 @@ export default {
     round: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: 'default',
+      validator (value) {
+        return oneOf(value, ['default', 'small', 'large'])
+      }
     }
   },
 
@@ -19,6 +28,7 @@ export default {
       const prefix = 'q-button-group'
 
       return {
+        [`${prefix}--${this.size}`]: !!this.size,
         [`${prefix}--round`]: this.round
       }
     }
