@@ -117,6 +117,7 @@ export default {
   $btn-plain-color = #696A6B
   $btn-plain-border = #D8DADF
   $btn-plain-bg = #fff
+  $btn-border-radius--round = 20px
   $btn-plain-border-hover = darken($btn-plain-border, 8)
   $btn-plain-bg-hover = darken($btn-plain-bg, 3)
 
@@ -224,7 +225,7 @@ export default {
 
   // Style
   .q-button--round
-    border-radius 20px
+    border-radius $btn-border-radius--round
   .q-button--long
     width 100%
 
@@ -288,9 +289,17 @@ export default {
   }
 
   // group
-  .button-group
+  .q-button-group
     display inline-block
     font-size 0
+    &--round
+      .q-button
+        &:first-child
+          border-top-left-radius $btn-border-radius--round
+          border-bottom-left-radius $btn-border-radius--round
+        &:last-child
+          border-top-right-radius $btn-border-radius--round
+          border-bottom-right-radius $btn-border-radius--round
     .q-button
       &:first-child
         border-top-right-radius 0
@@ -305,7 +314,7 @@ export default {
       &--plain
         &:hover
           border-color $btn-plain-border
-      &--primary
+      &--info, &--primary, &--success, &--warning, &--error
         &:first-child
           border-right-color $btn-group-border
         &:last-child
@@ -313,4 +322,6 @@ export default {
         &:not(:first-child):not(:last-child)
           border-left-color $btn-group-border
           border-right-color $btn-group-border
+      &--round
+        border-radius 0
 </style>

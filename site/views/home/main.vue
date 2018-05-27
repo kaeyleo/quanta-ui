@@ -103,7 +103,7 @@
             q-button.button-demo(color="primary" round) Medium
             q-button.button-demo(size="small" color="primary" round) Small
         h3 按钮组
-        p 将多个按钮聚合成组，便于区分不同类型的操作
+        p 将多个按钮聚合成组，便于区分不同类型的操作。支持 round 属性和 size 属性。
         .component-example
           div
             q-button-group.button-demo
@@ -114,11 +114,19 @@
               q-button(color="primary") Left
               q-button(color="primary") Middle
               q-button(color="primary") Right
+            q-button-group.button-demo(round)
+              q-button(color="primary") Left
+              q-button(color="primary") Middle
+              q-button(color="primary") Right
           div
             q-button-group.button-demo
               q-button(color="primary") Download
               q-button(color="success") Demo
               q-button(color="warning") Support
+            q-button-group.button-demo
+              q-button(color="primary" disabled) Download
+              q-button(color="success" disabled) Demo
+              q-button(color="warning" disabled) Support
         h3 长按钮
         p 添加 long 属性，按钮将适应容器宽度，撑满整行
         .component-example
