@@ -126,6 +126,8 @@ export default {
   $btn-warning-color = #FFB844
   $btn-error-color = #EE5660
 
+  $btn-group-border = rgba(#fff, .3)
+
   /**
    * Button Style
    */
@@ -284,4 +286,31 @@ export default {
       opacity 0
     }
   }
+
+  // group
+  .button-group
+    display inline-block
+    font-size 0
+    .q-button
+      &:first-child
+        border-top-right-radius 0
+        border-bottom-right-radius 0
+      &:last-child
+        border-top-left-radius 0
+        border-bottom-left-radius 0
+      &:not(:last-child)
+        margin-right -1px
+      &:not(:first-child):not(:last-child)
+        border-radius 0
+      &--plain
+        &:hover
+          border-color $btn-plain-border
+      &--primary
+        &:first-child
+          border-right-color $btn-group-border
+        &:last-child
+          border-left-color $btn-group-border
+        &:not(:first-child):not(:last-child)
+          border-left-color $btn-group-border
+          border-right-color $btn-group-border
 </style>

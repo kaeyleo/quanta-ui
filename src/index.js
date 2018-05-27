@@ -3,6 +3,7 @@ import Menu from './components/menu'
 import MenuItem from './components/menu-item'
 import SubmenuItem from './components/submenu-item'
 import Button from './components/button'
+import ButtonGroup from './components/button-group'
 import Callout from './components/callout'
 import Alert from './components/alert'
 import Message from './components/message'
@@ -18,6 +19,7 @@ const components = [
   MenuItem,
   SubmenuItem,
   Button,
+  ButtonGroup,
   Callout,
   Alert,
   Message,
@@ -43,6 +45,7 @@ export {
   MenuItem,
   SubmenuItem,
   Button,
+  ButtonGroup,
   Callout,
   Alert,
   Message,
