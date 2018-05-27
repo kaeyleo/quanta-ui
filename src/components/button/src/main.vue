@@ -121,11 +121,11 @@ export default {
   $btn-plain-border-hover = darken($btn-plain-border, 8)
   $btn-plain-bg-hover = darken($btn-plain-bg, 3)
 
-  $btn-info-color = #818B92
-  $btn-primary-color = #1194F6
-  $btn-success-color = #64C061
-  $btn-warning-color = #FFB844
-  $btn-error-color = #EE5660
+  $btn-gray-color = #818B92
+  $btn-blue-color = #1194F6
+  $btn-green-color = #64C061
+  $btn-gold-color = #FFB844
+  $btn-red-color = #EE5660
 
   $btn-group-border = rgba(#fff, .3)
 
@@ -266,16 +266,16 @@ export default {
     .q-button--ripple
       background-color rgba(0,0,0,.06)
 
-  .q-button--info, .q-button--info:hover
-    button-status($btn-info-color)
-  .q-button--primary, .q-button--primary:hover
-    button-status($btn-primary-color)
-  .q-button--success, .q-button--success:hover
-    button-status($btn-success-color)
-  .q-button--warning, .q-button--warning:hover
-    button-status($btn-warning-color)
-  .q-button--error, .q-button--error:hover
-    button-status($btn-error-color)
+  .q-button--gray, .q-button--gray:hover
+    button-status($btn-gray-color)
+  .q-button--blue, .q-button--blue:hover
+    button-status($btn-blue-color)
+  .q-button--green, .q-button--green:hover
+    button-status($btn-green-color)
+  .q-button--gold, .q-button--gold:hover
+    button-status($btn-gold-color)
+  .q-button--red, .q-button--red:hover
+    button-status($btn-red-color)
 
   // ripple
   .q-button--ripple
@@ -328,7 +328,7 @@ export default {
       &--plain
         &:hover
           border-color $btn-plain-border
-      &--info, &--primary, &--success, &--warning, &--error
+      &--gray, &--blue, &--green, &--gold, &--red
         &:first-child
           border-right-color $btn-group-border
         &:last-child

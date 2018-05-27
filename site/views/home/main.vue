@@ -28,63 +28,63 @@
         .component-example
           div
             q-button.button-demo Default
-            q-button.button-demo(color="info") Info
-            q-button.button-demo(color="primary") Primary
-            q-button.button-demo(color="success") Success
-            q-button.button-demo(color="warning") Warning
-            q-button.button-demo(color="error") Error
+            q-button.button-demo(color="gray") Gray
+            q-button.button-demo(color="blue") Blue
+            q-button.button-demo(color="green") Green
+            q-button.button-demo(color="gold") Gold
+            q-button.button-demo(color="red") Red
             q-button.button-demo(color="purple") Custom
           div
             q-button.button-demo(round) Default
-            q-button.button-demo(color="info" round) Info
-            q-button.button-demo(color="primary" round) Primary
-            q-button.button-demo(color="success" round) Success
-            q-button.button-demo(color="warning" round) Warning
-            q-button.button-demo(color="error" round) Error
+            q-button.button-demo(color="gray" round) Gray
+            q-button.button-demo(color="blue" round) Blue
+            q-button.button-demo(color="green" round) Green
+            q-button.button-demo(color="gold" round) Gold
+            q-button.button-demo(color="red" round) Red
         h3 文字按钮
         p 添加 text 属性
         .component-example
           div
             q-button.button-demo(text) Default
-            q-button.button-demo(color="info" text) Info
-            q-button.button-demo(color="primary" text) Primary
-            q-button.button-demo(color="success" text) Success
-            q-button.button-demo(color="warning" text) Warning
-            q-button.button-demo(color="error" text) Error
+            q-button.button-demo(color="gray" text) Gray
+            q-button.button-demo(color="blue" text) Blue
+            q-button.button-demo(color="green" text) Green
+            q-button.button-demo(color="gold" text) Gold
+            q-button.button-demo(color="red" text) Red
         h3 禁用状态
         p 添加 disabled 属性，按钮将被禁用
         .component-example
           div
             q-button.button-demo(text disabled) Default
-            q-button.button-demo(color="info" text disabled) Info
-            q-button.button-demo(color="primary" text disabled) Primary
-            q-button.button-demo(color="success" text disabled) Success
-            q-button.button-demo(color="warning" text disabled) Warning
-            q-button.button-demo(color="error" text disabled) Error
+            q-button.button-demo(color="gray" text disabled) Gray
+            q-button.button-demo(color="blue" text disabled) Blue
+            q-button.button-demo(color="green" text disabled) Green
+            q-button.button-demo(color="gold" text disabled) Gold
+            q-button.button-demo(color="red" text disabled) Red
           div
             q-button.button-demo(disabled) Default
-            q-button.button-demo(color="info" disabled) Info
-            q-button.button-demo(color="primary" disabled) Primary
-            q-button.button-demo(color="success" disabled) Success
-            q-button.button-demo(color="warning" disabled) Warning
-            q-button.button-demo(color="error" disabled) Error
+            q-button.button-demo(color="gray" disabled) Gray
+            q-button.button-demo(color="blue" disabled) Blue
+            q-button.button-demo(color="green" disabled) Green
+            q-button.button-demo(color="gold" disabled) Gold
+            q-button.button-demo(color="red" disabled) Red
         h3 波纹按钮
         p 添加 ripple 属性，点击时触发水波纹效果
         .component-example
           div
             q-button.button-demo(ripple text) Default
-            q-button.button-demo(color="info" text ripple) Info
-            q-button.button-demo(color="primary" text ripple) Primary
-            q-button.button-demo(color="success" text ripple) Success
-            q-button.button-demo(color="warning" text ripple) Warning
-            q-button.button-demo(color="error" text ripple) Error
+            q-button.button-demo(color="gray" text ripple) Gray
+            q-button.button-demo(color="blue" text ripple) Blue
+            q-button.button-demo(color="green" text ripple) Green
+            q-button.button-demo(color="gold" text ripple) Gold
+            q-button.button-demo(color="red" text ripple) Error
           div
             q-button.button-demo(ripple) Default
-            q-button.button-demo(color="info" ripple) Info
-            q-button.button-demo(color="primary" ripple) Primary
-            q-button.button-demo(color="success" ripple) Success
-            q-button.button-demo(color="warning" ripple) Warning
-            q-button.button-demo(color="error" ripple) Error
+            q-button.button-demo(color="gray" ripple) Gray
+            q-button.button-demo(color="blue" ripple) Blue
+            q-button.button-demo(color="green" ripple) Green
+            q-button.button-demo(color="gold" ripple) Gold
+            q-button.button-demo(color="red" ripple) Red
         h3 大小尺寸
         p 提供大中小三种尺寸，默认中等大小
         .component-example
@@ -92,16 +92,16 @@
             q-button.button-demo(size="small") Small
             q-button.button-demo Medium
             q-button.button-demo(size="large") Large
-            q-button.button-demo(size="large" color="primary") Large
-            q-button.button-demo(color="primary") Medium
-            q-button.button-demo(size="small" color="primary") Small
+            q-button.button-demo(size="large" color="blue") Large
+            q-button.button-demo(color="blue") Medium
+            q-button.button-demo(size="small" color="blue") Small
           div
             q-button.button-demo(size="small" round) Small
             q-button.button-demo(round) Medium
             q-button.button-demo(size="large" round) Large
-            q-button.button-demo(size="large" color="primary" round) Large
-            q-button.button-demo(color="primary" round) Medium
-            q-button.button-demo(size="small" color="primary" round) Small
+            q-button.button-demo(size="large" color="blue" round) Large
+            q-button.button-demo(color="blue" round) Medium
+            q-button.button-demo(size="small" color="blue" round) Small
         h3 按钮组
         p 将多个按钮聚合成组，便于区分不同类型的操作。支持 round 属性和 size 属性。
         .component-example
@@ -111,22 +111,22 @@
               q-button Middle
               q-button Right
             q-button-group.button-demo
-              q-button(color="primary") Left
-              q-button(color="primary") Middle
-              q-button(color="primary") Right
+              q-button(color="blue") Left
+              q-button(color="blue") Middle
+              q-button(color="blue") Right
             q-button-group.button-demo(round)
-              q-button(color="primary") Left
-              q-button(color="primary") Middle
-              q-button(color="primary") Right
+              q-button(color="blue") Left
+              q-button(color="blue") Middle
+              q-button(color="blue") Right
           div
             q-button-group.button-demo
-              q-button(color="primary") Download
-              q-button(color="success") Demo
-              q-button(color="warning") Support
+              q-button(color="blue") Download
+              q-button(color="green") Demo
+              q-button(color="gold") Support
             q-button-group.button-demo
-              q-button(color="primary" disabled) Download
-              q-button(color="success" disabled) Demo
-              q-button(color="warning" disabled) Support
+              q-button(color="blue" disabled) Download
+              q-button(color="green" disabled) Demo
+              q-button(color="gold" disabled) Support
           div
             q-button-group.button-demo(size="small")
               q-button Small
@@ -143,15 +143,15 @@
           div
             q-button.button-demo(long) Long Button
           div
-            q-button.button-demo(color="primary" long) Long Button
+            q-button.button-demo(color="blue" long) Long Button
         h3 加载中
         p 添加 loading 属性，使按钮处于加载中状态
         .component-example
           div
             q-button.button-demo(loading) Button
-            q-button.button-demo(color="primary" loading) Button
+            q-button.button-demo(color="blue" loading) Button
             q-button.button-demo(
-              color="primary"
+              color="blue"
               :loading="button.loading"
               @click="setButtonLoading"
             ) 点击加载
