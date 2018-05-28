@@ -361,6 +361,15 @@
               value="2"
               disabled
             ) Disabled & Checked
+      section.component
+        h2 Input 输入框
+        h3 基础用法
+        .component-example
+          div
+            q-input.input-demo(placeholder="Input something...")
+            q-input.input-demo(
+              v-model="input.value"
+            )
 </template>
 
 <script>
@@ -392,6 +401,9 @@ export default {
       radio: {
         city: '北京',
         disabled: '2'
+      },
+      input: {
+        value: '我是输入框 :D'
       }
     }
   },
@@ -496,4 +508,9 @@ export default {
     display block
     line-height 1
     font-size 15px
+  // input
+  .input-demo
+    width 220px
+    &+.input-demo
+      margin-left 20px
 </style>
