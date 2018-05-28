@@ -1,8 +1,10 @@
 <template lang="pug">
   .q-input-wrapper
     input.q-input(
+      type="text"
       :placeholder="placeholder"
-      v-model="value"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     )
 </template>
 
@@ -13,11 +15,6 @@ export default {
   props: {
     placeholder: String,
     value: ''
-  },
-
-  model: {
-    prop: 'value',
-    event: 'change'
   }
 }
 </script>
