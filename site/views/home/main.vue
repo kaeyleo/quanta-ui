@@ -77,7 +77,7 @@
             q-button.button-demo(color="blue" text ripple) Blue
             q-button.button-demo(color="green" text ripple) Green
             q-button.button-demo(color="gold" text ripple) Gold
-            q-button.button-demo(color="red" text ripple) Error
+            q-button.button-demo(color="red" text ripple) Red
           div
             q-button.button-demo(ripple) Default
             q-button.button-demo(color="gray" ripple) Gray
