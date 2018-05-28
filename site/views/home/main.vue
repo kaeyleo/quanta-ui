@@ -324,35 +324,43 @@
           div
             span.radio-demo__title City: {{ radio.city }}
             q-radio(
-              name="city"
               v-model="radio.city"
               value="北京"
             )
-            q-radio.s(
-              name="city"
+            q-radio(
               v-model="radio.city"
               value="上海"
             )
             q-radio(
-              name="city"
               v-model="radio.city"
               value="广州"
             )
             q-radio(
-              name="city"
               v-model="radio.city"
               value="東京"
             )
             q-radio(
-              name="city"
               v-model="radio.city"
               value="San Francisco"
             )
             q-radio(
-              name="city"
               v-model="radio.city"
               value="New York"
             )
+        h3 禁用状态
+        p 添加 disabled 属性，单选框将无法被选中
+        .component-example
+          div
+            q-radio(
+              v-model="radio.disabled"
+              value="1"
+              disabled
+            ) Disabled
+            q-radio(
+              v-model="radio.disabled"
+              value="2"
+              disabled
+            ) Disabled & Checked
 </template>
 
 <script>
@@ -382,7 +390,8 @@ export default {
         loading: false
       },
       radio: {
-        city: '北京'
+        city: '北京',
+        disabled: '2'
       }
     }
   },

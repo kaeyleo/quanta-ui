@@ -6,6 +6,7 @@
       type="radio"
       :value="value"
       :checked="checked"
+      :disabled="disabled"
     )
     label.q-radio__label(
       :for="id"
@@ -22,7 +23,8 @@ export default {
   props: {
     model: [String, Number, Boolean],
     value: [String, Number, Boolean],
-    name: [String, Number]
+    name: [String, Number],
+    disabled: Boolean
   },
 
   model: {
@@ -43,6 +45,7 @@ export default {
 
   methods: {
     toggle () {
+      if (this.disabled) return
       this.$emit('change', this.value)
     }
   }
@@ -68,6 +71,16 @@ export default {
           &:after
             opacity 1
             transform scale(1.6)
+      &:disabled
+        + .q-radio__label
+          cursor default
+          color #9396A1
+          &:after
+            background-color #C7CAD3
+      &:disabled:checked
+        + .q-radio__label
+          &:before
+            border-color #C7CAD3
     &__label
       position relative
       cursor pointer
