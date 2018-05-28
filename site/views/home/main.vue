@@ -316,6 +316,43 @@
                 q-divider
                 q-dropdown-item Django
                 q-dropdown-item Flask
+      section.component
+        h2 Radio 单选框
+        h3 基础用法
+        p 允许用户从一组选项中选择一个作为结果。如果选项过多，请考虑使用 select 选择器组件
+        .component-example
+          div
+            span.radio-demo__title City: {{ radio.city }}
+            q-radio(
+              name="city"
+              v-model="radio.city"
+              value="北京"
+            )
+            q-radio.s(
+              name="city"
+              v-model="radio.city"
+              value="上海"
+            )
+            q-radio(
+              name="city"
+              v-model="radio.city"
+              value="广州"
+            )
+            q-radio(
+              name="city"
+              v-model="radio.city"
+              value="東京"
+            )
+            q-radio(
+              name="city"
+              v-model="radio.city"
+              value="San Francisco"
+            )
+            q-radio(
+              name="city"
+              v-model="radio.city"
+              value="New York"
+            )
 </template>
 
 <script>
@@ -343,6 +380,9 @@ export default {
       },
       button: {
         loading: false
+      },
+      radio: {
+        city: '北京'
       }
     }
   },
@@ -441,4 +481,10 @@ export default {
       display inline-block
       padding 8px 0
       cursor pointer
+  // radio
+  .radio-demo__title
+    margin-bottom 12px
+    display block
+    line-height 1
+    font-size 15px
 </style>

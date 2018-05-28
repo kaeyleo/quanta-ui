@@ -12,6 +12,7 @@ import Dropdown from './components/dropdown'
 import DropdownMenu from './components/dropdown-menu'
 import DropdownItem from './components/dropdown-item'
 import Divider from './components/divider'
+import Radio from './components/radio'
 
 const components = [
   Header,
@@ -27,7 +28,8 @@ const components = [
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  Divider
+  Divider,
+  Radio
 ]
 
 const install = function (Vue, options = {}) {
@@ -53,7 +55,8 @@ export {
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  Divider
+  Divider,
+  Radio
 }
 
 export default {
