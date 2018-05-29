@@ -4,9 +4,19 @@
     h3 基础用法
     .component-example
       div
-        q-input.input-demo(placeholder="Input something...")
         q-input.input-demo(
           v-model="value"
+          placeholder="Input something..."
+        )
+        q-input.input-demo(
+          v-model="value"
+          placeholder="Readonly"
+          readonly
+        )
+        q-input.input-demo(
+          v-model="value"
+          placeholder="Disabled"
+          disabled
         )
 </template>
 
@@ -16,7 +26,7 @@ export default {
 
   data () {
     return {
-      value: '我是输入框 :D'
+      value: ''
     }
   }
 }
