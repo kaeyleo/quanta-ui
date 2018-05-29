@@ -39,12 +39,12 @@ export default {
     border-radius 3px
     background-color #fff
     outline none
-    transition .3s
+    transition border-color .3s, box-shadow .4s
     &::placeholder
       color #A6A9B4
     &:hover
       border-color $input-border-color-hover
     &:focus
       border-color $input-border-color-focus
-      box-shadow 0 0 8px rgba($input-border-color-focus, 10%)
+      box-shadow 0 0 0 2px rgba($input-border-color-focus, 16%)
 </style>
