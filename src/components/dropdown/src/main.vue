@@ -80,6 +80,11 @@ export default {
 </script>
 
 <style lang="stylus">
+  ul, ol
+    list-style none
+    margin 0
+    padding 0
+
   .q-dropdown
     display inline-block
     &__menu-wrapper
