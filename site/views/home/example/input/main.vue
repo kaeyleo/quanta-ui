@@ -18,6 +18,14 @@
           placeholder="Disabled"
           disabled
         )
+    h3 带清空按钮的输入框
+    p 添加 clearable 属性，可将内容一键清空
+    .component-example
+      div
+        q-input.input-demo--long(
+          v-model="clearValue"
+          clearable
+        )
 </template>
 
 <script>
@@ -26,7 +34,8 @@ export default {
 
   data () {
     return {
-      value: ''
+      value: '',
+      clearValue: 'Hover me and clear the input'
     }
   }
 }
@@ -39,4 +48,6 @@ export default {
     width 220px
     &+.input-demo
       margin-left 20px
+    &--long
+      width 260px
 </style>

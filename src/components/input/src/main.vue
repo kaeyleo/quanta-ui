@@ -1,19 +1,26 @@
 <template lang="pug">
   .q-input-wrapper
-    input.q-input(
-      :type="type"
-      :placeholder="placeholder"
-      :value="value"
-      :readonly="readonly"
-      :disabled="disabled"
-      :autocomplete="autocomplete"
-      :autofocus="autofocus"
-      :maxlength="maxlength"
-      :minlength="minlength"
-      :max="max"
-      :min="min"
-      @input="$emit('input', $event.target.value)"
-    )
+    .q-input(:class="{ 'q-input--clearable': clearable }")
+      input(
+        ref="input"
+        :type="type"
+        :placeholder="placeholder"
+        :value="value"
+        :readonly="readonly"
+        :disabled="disabled"
+        :autocomplete="autocomplete"
+        :autofocus="autofocus"
+        :maxlength="maxlength"
+        :minlength="minlength"
+        :max="max"
+        :min="min"
+        @input="$emit('input', $event.target.value)"
+      )
+      span.clear-box(
+        v-if="showClear"
+        @click="clearInput"
+      )
+        i.clear-icon.q-icon-close-circle
 </template>
 
 <script>
@@ -31,6 +38,7 @@ export default {
     readonly: Boolean,
     disabled: Boolean,
     autofocus: Boolean,
+    clearable: Boolean,
     type: {
       type: String,
       default: 'text',
@@ -46,6 +54,28 @@ export default {
     min: Number,
     maxlength: Number,
     minlength: Number
+  },
+
+  computed: {
+    showClear () {
+      const visible = this.clearable &&
+        this.value !== '' &&
+        !this.disabled &&
+        !this.readonly
+
+      return visible
+    }
+  },
+
+  methods: {
+    focus () {
+      this.$refs.input.focus()
+    },
+
+    clearInput () {
+      this.$emit('input', '')
+      this.focus()
+    }
   }
 }
 </script>
@@ -55,12 +85,36 @@ export default {
   $input-border-color = #D2D4DB
   $input-border-color-hover = darken(#D2D4DB, 16%)
   $input-border-color-focus = #1194F6
+  $input-clear-color = #9094A0
+
+  [class*=" q-icon-"], [class^=q-icon-]
+    font-family "quanta-icons" !important
+    display inline-block
+    font-size 14px
+    font-style normal
+    font-weight 400
+    font-variant normal
+    line-height 1
+    vertical-align middle
+    -webkit-font-smoothing antialiased
 
   .q-input-wrapper
     display inline-block
     width 100%
 
   .q-input
+    position relative
+    &--clearable
+      input
+        padding-right 32px
+        &:focus
+          & + .clear-box .clear-icon
+            opacity 1
+    &:hover
+      .clear-box .clear-icon
+        opacity 1
+
+  input
     padding 0 14px
     width 100%
     height 40px
@@ -84,4 +138,21 @@ export default {
       &:focus
         border-color $input-border-color-focus
         box-shadow 0 0 0 2px rgba($input-border-color-focus, 16%)
+
+  .clear-box
+    position absolute
+    top 1px
+    right 6px
+    height 38px
+    line-height 37px
+    width 24px
+    text-align center
+    .clear-icon
+      opacity 0
+      font-size 17px
+      color rgba($input-clear-color, 50%)
+      cursor pointer
+      transition .3s
+      &:hover
+        color $input-clear-color
 </style>
