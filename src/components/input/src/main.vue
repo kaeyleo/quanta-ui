@@ -1,7 +1,7 @@
 <template lang="pug">
   .q-input-wrapper
     .q-input(:class="{ 'q-input--clearable': clearable }")
-      input(
+      input.q-input-self(
         ref="input"
         :type="type"
         :placeholder="placeholder"
@@ -114,7 +114,7 @@ export default {
       .clear-box .clear-icon
         opacity 1
 
-  input
+  input.q-input-self
     padding 0 14px
     width 100%
     height 40px
