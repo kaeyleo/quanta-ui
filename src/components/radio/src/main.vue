@@ -69,7 +69,7 @@ export default {
             border-color #1194F6
           &:after
             opacity 1
-            transform scale(1.6)
+            transform scale(1.5)
       &:disabled
         + .q-radio__label
           cursor default
@@ -94,7 +94,8 @@ export default {
         vertical-align top
         border-radius 50%
         border 1px solid #C7CAD3
-        transition .5s
+        transition-delay .14s
+        transition-duration .3s
       &:after
         position absolute
         top 6px
@@ -106,5 +107,6 @@ export default {
         border-radius 50%
         background-color #1194F6
         opacity 0
-        transition .2s
+        transform scale(.3)
+        transition .26s cubic-bezier(.43,.27,.38,1.28)
 </style>
