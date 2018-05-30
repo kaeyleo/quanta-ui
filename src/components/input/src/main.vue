@@ -16,11 +16,12 @@
         :min="min"
         @input="$emit('input', $event.target.value)"
       )
-      span.clear-box(
-        v-if="showClear"
-        @click="clearInput"
-      )
-        i.clear-icon.q-icon-close-circle
+      transition(name="clearable-input-fade")
+        span.clear-box(
+          v-if="showClear"
+          @click="clearInput"
+        )
+          i.clear-icon.q-icon-close-circle
 </template>
 
 <script>
@@ -155,4 +156,11 @@ export default {
       transition .3s
       &:hover
         color $input-clear-color
+
+  .clearable-input-fade-
+    &enter-active, &leave-active
+      transition .2s
+    &enter, &leave-to
+      opacity 0
+      transform scale(.8)
 </style>
