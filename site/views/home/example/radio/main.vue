@@ -39,12 +39,12 @@
           v-model="disabledValue"
           value="1"
           disabled
-        ) Disabled
+        ) Disabled On
         q-radio(
           v-model="disabledValue"
           value="2"
           disabled
-        ) Disabled & Checked
+        ) Disabled Off
 </template>
 
 <script>
@@ -54,7 +54,7 @@ export default {
   data () {
     return {
       city: '北京',
-      disabledValue: '2'
+      disabledValue: '1'
     }
   }
 }

@@ -55,7 +55,6 @@ export default {
 <style lang="stylus">
   .q-radio
     display inline-block
-    cursor pointer
     height 24px
     font-size 14px
     line-height 26px
