@@ -1,6 +1,7 @@
 <template lang="pug">
   .q-switch(
     :class="{ 'q-switch--checked': status, 'q-switch--disabled': disabled }"
+    :style="styleObj"
     @click="toggle"
   )
 </template>
@@ -20,12 +21,25 @@ export default {
       type: Boolean,
       default: false
     },
+    color: String,
     disabled: Boolean
   },
 
   model: {
     prop: 'value',
     event: 'change'
+  },
+
+  computed: {
+    styleObj () {
+      const style = {}
+
+      if (this.status && this.color) {
+        style.backgroundColor = this.color
+      }
+
+      return style
+    }
   },
 
   methods: {
@@ -63,7 +77,7 @@ export default {
       box-shadow 0 1px 1px rgba(0, 0, 0, .2)
       transition left .2s, box-shadow .3s
     &--checked
-      background-color #409eff
+      background-color #1194F6
       &:after
         left 20px
         box-shadow 0 0 0 rgba(0, 0, 0, 0)
