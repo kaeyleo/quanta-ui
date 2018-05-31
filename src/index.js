@@ -13,6 +13,7 @@ import DropdownMenu from './components/dropdown-menu'
 import DropdownItem from './components/dropdown-item'
 import Divider from './components/divider'
 import Radio from './components/radio'
+import Checkbox from './components/checkbox'
 import Input from './components/input'
 
 const components = [
@@ -31,6 +32,7 @@ const components = [
   DropdownItem,
   Divider,
   Radio,
+  Checkbox,
   Input
 ]
 
@@ -59,6 +61,7 @@ export {
   DropdownItem,
   Divider,
   Radio,
+  Checkbox,
   Input
 }
 

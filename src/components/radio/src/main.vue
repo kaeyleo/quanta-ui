@@ -69,7 +69,7 @@ export default {
             border-color #1194F6
           &:after
             opacity 1
-            transform scale(1.5)
+            transform scale(1.3)
       &:disabled
         + .q-radio__label
           cursor default
@@ -87,8 +87,8 @@ export default {
         margin-right 8px
         content ''
         display inline-block
-        width 16px
-        height 16px
+        width 15px
+        height 15px
         position relative
         top 3px
         vertical-align top
@@ -98,12 +98,12 @@ export default {
         transition-duration .3s
       &:after
         position absolute
-        top 6px
-        left 6px
+        top 5px
+        left 5px
         content ''
         display inline-block
-        width 6px
-        height 6px
+        width 7px
+        height 7px
         border-radius 50%
         background-color #1194F6
         opacity 0

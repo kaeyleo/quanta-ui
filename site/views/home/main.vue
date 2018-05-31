@@ -45,6 +45,9 @@
         radio-example
 
       section.component
+        checkbox-example
+
+      section.component
         input-example
 </template>
 
@@ -56,6 +59,7 @@ import MessageExample from './example/message/main'
 import TagExample from './example/tag/main'
 import DropdownExample from './example/dropdown/main'
 import RadioExample from './example/radio/main'
+import CheckboxExample from './example/checkbox/main'
 import InputExample from './example/input/main'
 
 export default {
@@ -92,6 +96,7 @@ export default {
     TagExample,
     DropdownExample,
     RadioExample,
+    CheckboxExample,
     InputExample
   }
 }

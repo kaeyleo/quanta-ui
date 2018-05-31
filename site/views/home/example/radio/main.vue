@@ -64,7 +64,7 @@ export default {
   @import "../style.styl"
 
   .radio-demo__title
-    margin-bottom 12px
+    margin-bottom 16px
     display block
     line-height 1
     font-size 15px
