@@ -22,7 +22,10 @@ export default {
 
   props: {
     model: [String, Number, Boolean],
-    value: [String, Number, Boolean],
+    value: {
+      type: [String, Number, Boolean],
+      default: ''
+    },
     name: [String, Number],
     disabled: Boolean
   },
@@ -58,6 +61,7 @@ export default {
     height 24px
     font-size 14px
     line-height 26px
+    background-color #eee
     &+.q-radio
       margin-left 20px
     &__input
