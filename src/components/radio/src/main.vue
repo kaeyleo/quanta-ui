@@ -74,6 +74,8 @@ export default {
         + .q-radio__label
           cursor default
           color #9396A1
+          &:before
+            background-color #F4F4F6
           &:after
             background-color #C7CAD3
       &:disabled:checked
