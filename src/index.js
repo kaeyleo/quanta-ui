@@ -14,6 +14,7 @@ import DropdownItem from './components/dropdown-item'
 import Divider from './components/divider'
 import Radio from './components/radio'
 import Checkbox from './components/checkbox'
+import Switch from './components/switch'
 import Input from './components/input'
 
 const components = [
@@ -33,6 +34,7 @@ const components = [
   Divider,
   Radio,
   Checkbox,
+  Switch,
   Input
 ]
 
@@ -62,6 +64,7 @@ export {
   Divider,
   Radio,
   Checkbox,
+  Switch,
   Input
 }
 

@@ -61,7 +61,6 @@ export default {
     height 24px
     font-size 14px
     line-height 26px
-    background-color #eee
     &+.q-radio
       margin-left 20px
     &__input
