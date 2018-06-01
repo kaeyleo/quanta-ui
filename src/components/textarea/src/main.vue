@@ -2,16 +2,20 @@
   .q-textarea
     textarea.q-textarea__input(
       :style="styleObj"
+      v-model="currentValue"
       :name="name"
-      :value="value"
       :placeholder="placeholder"
-      :maxlength="maxlength"
+      :maxlength="maxLen"
       :rows="rows"
       :autofocus="autofocus"
       :readonly="readonly"
       :disabled="disabled"
       @input="$emit('input', $event.target.value)"
     )
+    .q-textarea__footer(v-if="counter")
+      span.q-textarea__count
+        span(:class="{ 'error-text': isExceed }") {{ currentValue.length }}
+        span &nbsp/ {{ counter }}
 </template>
 
 <script>
@@ -19,6 +23,20 @@ import { oneOf } from 'src/script/util'
 
 export default {
   name: 'q-textarea',
+
+  data () {
+    return {
+      currentValue: this.value ? this.value : '',
+      maxLen: this.maxlength,
+      isExceed: false
+    }
+  },
+
+  watch: {
+    currentValue (value) {
+      this.isExceed = value.length > this.counter
+    }
+  },
 
   props: {
     value: String,
@@ -31,6 +49,7 @@ export default {
       type: Number,
       default: 2
     },
+    counter: Number,
     maxlength: Number,
     autofocus: Boolean,
     resize: {
@@ -54,6 +73,13 @@ export default {
 
       return style
     }
+  },
+
+  mounted () {
+    if (this.counter) {
+      const count = this.counter
+      this.isExceed = this.currentValue.length > count
+    }
   }
 }
 </script>
@@ -63,6 +89,9 @@ export default {
   $input-border-color = #D2D4DB
   $input-border-color-hover = darken(#D2D4DB, 16%)
   $input-border-color-focus = #1194F6
+
+  .error-text
+    color #F54F71
 
   .q-textarea
     &__input
@@ -91,4 +120,12 @@ export default {
         &:focus
           border-color $input-border-color-focus
           box-shadow 0 0 0 2px rgba($input-border-color-focus, 16%)
+    &__footer
+      padding 10px 0 0 0
+      display flex
+      justify-content flex-end
+    &__count
+      font-size 14px
+      color #7E8291
+      line-height 1
 </style>
