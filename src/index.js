@@ -16,6 +16,7 @@ import Radio from './components/radio'
 import Checkbox from './components/checkbox'
 import Switch from './components/switch'
 import Input from './components/input'
+import Textarea from './components/textarea'
 
 const components = [
   Header,
@@ -35,7 +36,8 @@ const components = [
   Radio,
   Checkbox,
   Switch,
-  Input
+  Input,
+  Textarea
 ]
 
 const install = function (Vue, options = {}) {
@@ -65,7 +67,8 @@ export {
   Radio,
   Checkbox,
   Switch,
-  Input
+  Input,
+  Textarea
 }
 
 export default {

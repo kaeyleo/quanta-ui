@@ -126,7 +126,7 @@ export default {
     border-radius 3px
     background-color #fff
     outline none
-    transition border-color .3s, box-shadow .4s
+    transition border-color .2s, box-shadow .3s
     &::placeholder
       color $input-light-color
     &:disabled
