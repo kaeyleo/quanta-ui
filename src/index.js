@@ -17,6 +17,7 @@ import Checkbox from './components/checkbox'
 import Switch from './components/switch'
 import Input from './components/input'
 import Textarea from './components/textarea'
+import Tooltip from './components/tooltip'
 
 const components = [
   Header,
@@ -37,7 +38,8 @@ const components = [
   Checkbox,
   Switch,
   Input,
-  Textarea
+  Textarea,
+  Tooltip
 ]
 
 const install = function (Vue, options = {}) {
@@ -68,7 +70,8 @@ export {
   Checkbox,
   Switch,
   Input,
-  Textarea
+  Textarea,
+  Tooltip
 }
 
 export default {

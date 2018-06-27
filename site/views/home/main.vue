@@ -55,6 +55,9 @@
 
       section.component
         textarea-example
+
+      section.component
+        tooltip-example
 </template>
 
 <script>
@@ -69,6 +72,7 @@ import CheckboxExample from './example/checkbox/main'
 import SwitchExample from './example/switch/main'
 import InputExample from './example/input/main'
 import TextareaExample from './example/textarea/main'
+import TooltipExample from './example/tooltip/main'
 
 export default {
   name: 'Home',
@@ -107,7 +111,8 @@ export default {
     CheckboxExample,
     SwitchExample,
     InputExample,
-    TextareaExample
+    TextareaExample,
+    TooltipExample
   }
 }
 </script>
