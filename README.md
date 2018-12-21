@@ -2,14 +2,21 @@
 
 > A Desktop UI Library For Vue.js
 
-## Install
+![](https://assets-1255751683.cos.ap-chengdu.myqcloud.com/quanta-ui-view.png)
+
+## ✨ Features
+- Based on Vue 2.0
+- Friendly API
+- Dozens of high-quality components
+
+## 📦 Install
 
 ``` bash
 # install dependencies
 npm install
 ```
 
-## Import
+## 🔨 Usage
 
 you can use the full bundle of QuantaUI.
 
@@ -19,6 +26,11 @@ import QuantaUI from '../src'
 
 Vue.use(QuantaUI)
 ```
+
+## ToDo
+
+- More components
+- i18n
 
 ## License
 
